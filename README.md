@@ -120,7 +120,7 @@ This is an example of how to list things you need to use the software and how to
 ## Getting Started from Scratch
 
 1. Create Blank Repo
-2. Install Next.js wordpress-cms example `npx create-next-app --example cms-wordpress {project-name}`
+2. Install Next.js typescript example `npx create-next-app --example with-typescript {project-name}`
 <!-- USAGE EXAMPLES -->
 
 ## Usage
