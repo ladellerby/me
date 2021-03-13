@@ -166,13 +166,18 @@ function App() {
 }
 ```
 
-## Installing JSON Resume
+### Installing JSON Resume
 
 1. Install JSONREsume `npm install -g resume-cli`
 2. Install JSONResume theme `npm install -g jsonresume-theme-standard-resume`
 3. Initialize the resume `resume init`
 4. Validate resume creation and theme `resume serve -t standard-resume`
 5. Export resume from LinkedIn and convert to JSON Resume format [JSON Resume Exporter](https://chrome.google.com/webstore/detail/json-resume-exporter/caobgmmcpklomkcckaenhjlokpmfbdec)
+
+### Setting up CI/CD
+
+[How to Setup GitHub Actions to Deploy a Node.js to a Server](https://soshace.com/deploying-your-nodejs-code-to-a-server-every-time-you-push-with-github-actions/)
+
 <!-- USAGE EXAMPLES -->
 
 ## Usage
