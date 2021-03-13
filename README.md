@@ -86,10 +86,10 @@
 - [WordPress](https://wordpress.com/)
 - [WPGraphQL](https://www.wpgraphql.com//)
 - [ultiamte-react-resume](https://github.com/welovedevs/react-ultimate-resume)
-- [ultiamte-react-resume](https://github.com/welovedevs/react-ultimate-resume)
 - [tsParticle](https://github.com/matteobruni/tsparticles)
 - [JSON Resume](https://jsonresume.org/)
 - [Standard Resume Theme](https://www.npmjs.com/package/jsonresume-theme-standard-resume)
+- [JSON Resume Exporter](https://chrome.google.com/webstore/detail/json-resume-exporter/caobgmmcpklomkcckaenhjlokpmfbdec)
 
 <!-- GETTING STARTED -->
 
@@ -119,8 +119,60 @@ This is an example of how to list things you need to use the software and how to
 
 ## Getting Started from Scratch
 
+### Project Initialization
+
 1. Create Blank Repo
 2. Install Next.js typescript example `npx create-next-app --example with-typescript {project-name}`
+
+### Setup Chakra-UI
+
+1. Install Chakra-UI dependencies `npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion @chakra-ui/theme-tools @chakra-ui/icons`
+2. Add base component to import chakra theme provider in pages/\_app.tsx
+
+```
+import { ChakraProvider } from '@chakra-ui/react';
+
+function MyApp({ Component, pageProps } : any) {
+  return (
+    <ChakraProvider>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
+}
+export default MyApp;
+```
+
+3. Add theme overrides [Setup Custom Chakra Theme](https://chakra-ui.com/docs/theming/customize-theme)
+
+```
+// 1. Import the extendTheme function
+import { extendTheme } from "@chakra-ui/react"
+// 2. Extend the theme to include custom colors, fonts, etc
+const colors = {
+  brand: {
+    900: "#1a365d",
+    800: "#153e75",
+    700: "#2a69ac",
+  },
+}
+const theme = extendTheme({ colors })
+// 3. Pass the `theme` prop to the `ChakraProvider`
+function App() {
+  return (
+    <ChakraProvider theme={theme}>
+      <App />
+    </ChakraProvider>
+  )
+}
+```
+
+## Installing JSON Resume
+
+1. Install JSONREsume `npm install -g resume-cli`
+2. Install JSONResume theme `npm install -g jsonresume-theme-standard-resume`
+3. Initialize the resume `resume init`
+4. Validate resume creation and theme `resume serve -t standard-resume`
+5. Export resume from LinkedIn and convert to JSON Resume format [JSON Resume Exporter](https://chrome.google.com/webstore/detail/json-resume-exporter/caobgmmcpklomkcckaenhjlokpmfbdec)
 <!-- USAGE EXAMPLES -->
 
 ## Usage

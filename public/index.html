@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>LaDell Erby</title>
+    <meta name="description" content="Currently, I work as a API Support Specialist in the Product Development department at MINDBODY INC in San Luis Obispo, CA. Here I strive to continually develop my technical and professional skills while fully enveloping the core values of the company through its unique and diverse work culture. I am very passionate about API Development. I believe the whole concept of producing and improving software APIs helps foster a more connected society." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
+    <style>:root {
+  /* Colors */
+  --primaryColor: #212529;
+  --secondaryColor: #95a5a6;
+  --accentColor: #f1c40f;
+  --linkColor: #2ecc71;
+  --mutedColor: #f4f6f6;
+
+  /* Typography */
+  --ratio: 1.25;
+  --scale0: 1rem;
+  --scale1: calc(var(--scale0) * var(--ratio));
+  --scale2: calc(var(--scale1) * var(--ratio));
+  --scale3: calc(var(--scale2) * var(--ratio));
+  --scale4: calc(var(--scale3) * var(--ratio));
+  --scale5: calc(var(--scale4) * var(--ratio));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  color: var(--primaryColor);
+  display: grid;
+  font: 1em/1.5 Lato, sans-serif;
+  gap: 2em;
+  grid-template-columns:
+    [full-start]
+    1fr
+    [main-start side-start]
+    minmax(min-content, 12em)
+    [side-end content-start]
+    minmax(min-content, 36em)
+    [main-end content-end]
+    1fr
+    [full-end];
+  grid-template-rows: auto [content] 0;
+  margin-bottom: 4em;
+}
+
+body::before {
+  content: '';
+  grid-column: full;
+  grid-row: content;
+}
+
+ol,
+ul {
+  padding-left: 1em;
+}
+
+li + li {
+  margin-top: 0.2em;
+}
+
+li::marker {
+  color: var(--mutedColor);
+}
+
+a {
+  color: var(--linkColor);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:focus,
+a:hover {
+  color: var(--accentColor);
+}
+
+h1,
+h2,
+h3,
+h5 {
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--scale5);
+}
+
+h2 {
+  color: var(--secondaryColor);
+  font-size: var(--scale4);
+}
+
+h3 {
+  color: var(--accentColor);
+  font-size: var(--scale3);
+  grid-column: side;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: var(--scale2);
+}
+
+h5 {
+  font-size: var(--scale1);
+}
+
+h6 {
+  font-size: var(--scale0);
+}
+
+blockquote {
+  border-left: 0.2em solid var(--mutedColor);
+  padding-left: 1em;
+}
+
+cite {
+  color: var(--secondaryColor);
+  font-style: inherit;
+}
+
+cite::before {
+  content: '— ';
+}
+
+.masthead {
+  background: var(--mutedColor);
+  display: inherit;
+  gap: inherit;
+  grid-column: full;
+  grid-template-columns: inherit;
+  padding: 4em 0;
+  row-gap: 0;
+}
+
+.masthead > *,
+section {
+  grid-column: main;
+}
+
+article > * + *,
+blockquote > * + * {
+  margin-top: 0.6em;
+}
+
+.stack {
+  display: grid;
+  gap: 1.5em;
+}
+
+.grid-list {
+  display: grid;
+  gap: 1em;
+}
+
+.spaced-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spaced-list:first-child::before {
+  border-bottom: 1px solid var(--mutedColor);
+  content: '';
+  flex-grow: 1;
+  margin: 0 1em;
+  order: 1;
+}
+
+.spaced-list > :nth-child(2) {
+  order: 2;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.tag-list > li {
+  background: var(--mutedColor);
+  margin: 0 0.2em 0.2em 0;
+  padding: 0.2em 0.6em;
+}
+
+@media print, (min-width: 48em) {
+  h3 {
+    text-align: right;
+    margin-bottom: inherit;
+  }
+
+  .masthead > *,
+  section {
+    grid-column: content;
+  }
+
+  section {
+    display: contents;
+  }
+
+  .grid-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+  </head>
+  <body>
+      <header class="masthead">
+          <h1>LaDell Erby</h1>
+          <h2>QA Engineer at MINDBODY, Inc.</h2>
+      </header>
+      <section id="contact">
+        <h3>Contact</h3>
+        <div class="grid-list">
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:ladellerby@gmail.com">ladellerby@gmail.com</a>
+            </div>
+            <div>
+              <h4>Phone</h4>
+              (209) 914-3898
+            </div>
+            <div>
+              <h4>Website</h4>
+              <a href="https://ladellerby.com">ladellerby.com</a>
+            </div>
+        </div>
+      </section>
+        <section id="about">
+          <h3>About</h3>
+          <article>
+            <p>Currently, I work as a API Support Specialist in the Product Development department at MINDBODY INC in San Luis Obispo, CA. Here I strive to continually develop my technical and professional skills while fully enveloping the core values of the company through its unique and diverse work culture. I am very passionate about API Development. I believe the whole concept of producing and improving software APIs helps foster a more connected society.</p>
+          </article>
+        </section>
+        <section id="profiles">
+          <h3>Profiles</h3>
+          <div class="grid-list">
+              <div>
+                  <h4>LinkedIn</h4>
+                    <a href="https://www.linkedin.com/in/ladellerbyjr/">ladellerbyjr</a>
+              </div>
+              <div>
+                  <h4>Instagram</h4>
+                    <a href="https://instagram.com/ladellerby">ladellerby</a>
+              </div>
+              <div>
+                  <h4>MixCloud</h4>
+                    <a href="https://www.mixcloud.com/ladell-erby/">ladellerby</a>
+              </div>
+          </div>
+        </section>
+
+      <section id="work">
+        <h3>Work</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Epic Entertainment DJ Lighting and Photo Booth</h4>
+                  <span>
+                    <time datetime="2017-02-28">Feb 2017</time> –
+                    Present
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>DJ &amp; MC</strong>
+                    <a href="https://www.linkedin.com/company/7298649">www.linkedin.com/company/7298649</a>
+                </div>
+              </header>
+                
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Epic Entertainment DJ Lighting and Photo Booth</h4>
+                  <span>
+                    <time datetime="2015-08-31">Aug 2015</time> –
+                    <time datetime="2017-02-28">Feb 2017</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Photobooth Host</strong>
+                    <a href="https://www.linkedin.com/company/7298649">www.linkedin.com/company/7298649</a>
+                </div>
+              </header>
+                
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>MINDBODY, Inc.</h4>
+                  <span>
+                    <time datetime="2018-01-31">Jan 2018</time> –
+                    Present
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>QA Engineer</strong>
+                    <a href="https://www.linkedin.com/company/42640">www.linkedin.com/company/42640</a>
+                </div>
+              </header>
+                
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>MINDBODY, Inc.</h4>
+                  <span>
+                    <time datetime="2015-10-31">Oct 2015</time> –
+                    <time datetime="2017-12-31">Dec 2017</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>QA Technician</strong>
+                    <a href="https://www.linkedin.com/company/42640">www.linkedin.com/company/42640</a>
+                </div>
+              </header>
+                <p>As a Software Test Technician, I come in each day with a mission- break code through testing. I work in an Agile Scrum development environment with a close-knit scrum team and I am in  constant communication with the developers, other testers, and designers dicussing newly created features. MINDBODY SaaS software provides a fun and constantly growing platform for me to always be working on something different and new as I grow in the company.</p>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>MINDBODY, Inc.</h4>
+                  <span>
+                    <time datetime="2013-04-01">Apr 2013</time> –
+                    <time datetime="2015-10-02">Oct 2015</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>API Support Specialist</strong>
+                    <a href="https://www.linkedin.com/company/42640">www.linkedin.com/company/42640</a>
+                </div>
+              </header>
+                <p>Supported and provided technical consultation for third party developers integration utilizing public facing MINDBODY API's.</p>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>MINDBODY, Inc.</h4>
+                  <span>
+                    <time datetime="2009-10-02">Oct 2009</time> –
+                    <time datetime="2013-04-01">Apr 2013</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Technical Support Specialist</strong>
+                    <a href="https://www.linkedin.com/company/42640">www.linkedin.com/company/42640</a>
+                </div>
+              </header>
+                <p>Provided technical support and training to clients using the MINDBODY software.</p>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>San Luis Obispo Regional Transit Authority</h4>
+                  <span>
+                    <time datetime="2011-01-31">Jan 2011</time> –
+                    <time datetime="2011-04-30">Apr 2011</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Marketing and Community Relations Intern</strong>
+                    <a href="https://www.linkedin.com/company/564168">www.linkedin.com/company/564168</a>
+                </div>
+              </header>
+                <p>Conducted research and contacted city officials to guide capital investment improvements to the San Luis Obispo Regional Transportation Authority existing bus line infrastructure.</p>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>California Department of Transportation</h4>
+                  <span>
+                    <time datetime="2009-01-31">Jan 2009</time> –
+                    <time datetime="2010-06-30">Jun 2010</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Transportation Planning Intern</strong>
+                    <a href="https://www.linkedin.com/company/2661">www.linkedin.com/company/2661</a>
+                </div>
+              </header>
+                <p>Used traffic counts, car volumes, Excel, Arc GIS, and Trans CAD to create maps, graphs, and reports to display future car counts and volumes to determine the Level of Service for all State Highways in Santa Barbara, San Luis Obispo, Monterey, Santa Cruz, and San Benito Counties.</p>
+    <p>Also aided in the creation of Transportation Planning Reports: comprehensive summary document that captures physical, social, political, and development characteristics along State Routes, and Corridor System Management Plans: document that provides for the integrated management of travel modes and roadways so as to facilitate the efficient and effective mobility of people and goods within California's most congested transportation corridors. Each CSMP presents an analysis of existing and future traffic conditions and proposes traffic management strategies and transportation improvements to maintain and enhance mobility. CSMP's will address State Highways, local roadways, transit, and other transportation modes.</p>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Cal Poly State University</h4>
+                  <span>
+                    <time datetime="2008-09-30">Sep 2008</time> –
+                    <time datetime="2009-04-30">Apr 2009</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Student Assistant</strong>
+                    <a href="https://www.linkedin.com/company/9118">www.linkedin.com/company/9118</a>
+                </div>
+              </header>
+                <p>Created and modified documents using Microsoft Office and Adobe CS3 Suites. Maintained and operated fax/ copy/ scan machines. Light janitorial duties.</p>
+    <p>Scheduled appointments for students with their counselors. Administered academic skill seminars for students in topics such as Time Management, Studying, and Note Taking.</p>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Cal Poly State University</h4>
+                  <span>
+                    <time datetime="2008-06-30">Jun 2008</time> –
+                    <time datetime="2008-09-30">Sep 2008</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Learning Assistant</strong>
+                    <a href="https://www.linkedin.com/company/9118">www.linkedin.com/company/9118</a>
+                </div>
+              </header>
+                <p>Led a supplemental Psychology class for incoming college freshmen and introduced them to college life to allow for a smooth transtion into higher education.</p>
+            </article>
+        </div>
+      </section>
+      <section id="volunteer">
+        <h3>Volunteer</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Jack&#x27;s Helping Hand</h4>
+                  <span>
+                    <time datetime="2011-07-09">Jul 2011</time> –
+                    Present
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Volunteer</strong>
+                    <a href="https://www.jackshelpinghand.org/">www.jackshelpinghand.org</a>
+                </div>
+              </header>
+                <p>This organization enables and empowers families and the community, to meet the unique and unmet physical, mental and medical needs of children and young adults under the age of 21.</p>
+    <p>They are there to help when a child is diagnosed with cancer, injured, or is stricken with a rare condition or disability. In San Luis Obispo County, parents or guardians of children with special needs can turn to Jack's Helping Hand, a local nonprofit, for assistance with travel expenses, lodging, food, therapeutic and specialized equipment, and other needs that are not available from other sources, or that exceed the family's financial capability.</p>
+            </article>
+        </div>
+      </section>
+      <section id="education">
+        <h3>Education</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>California Polytechnic State University-San Luis Obispo</h4>
+                  <span>
+                    <time datetime="2006-12-31">Dec 2006</time> –
+                    <time datetime="2012-12-31">Dec 2012</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>City and Regional Planning, Transportation Planning Emphasis</strong>
+                </div>
+              </header>
+                
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Cuesta College</h4>
+                  <span>
+                    <time datetime="2009-12-31">Dec 2009</time> –
+                    <time datetime="2009-12-31">Dec 2009</time>
+                  </span>
+                </div>
+                <div class="spaced-list">
+                    <strong>Real Estate</strong>
+                </div>
+              </header>
+                
+                <h5>Courses</h5>
+                <ul>
+                    <li>null - Real Estate Economics</li>
+                    <li>null - Real Estate Law</li>
+                </ul>
+            </article>
+        </div>
+      </section>
+      <section id="skills">
+        <h3>Skills</h3>
+        <div class="grid-list">
+            <div>
+                <h4>Skill</h4>
+            </div>
+        </div>
+      </section>
+      <section id="languages">
+        <h3>Languages</h3>
+        <div class="grid-list">
+            <div>
+                <h4>en</h4>
+              Native Speaker
+            </div>
+        </div>
+      </section>
+      <section id="references">
+        <h3>References</h3>
+        <div class="stack">
+              <blockquote>
+                <p>LaDell served as a Learning Assistant and I had the pleasure to supervise his work. His dedication and team skills were invaluable to the success of our program. LaDell is easy to work with and was well liked and supported by co-workers and the students/clients he served. LaDell is responsible, punctual and has strong organizational skills. I would highly recommend LaDell for any position.</p>
+                  <p>
+                    <cite>Maria Arvizu-Rodriguez</cite>
+                  </p>
+              </blockquote>
+              <blockquote>
+                <p>LaDell is a courageous, bright and caring professional. He is dedicated and upholds strong ethics. He is easy going and brings a sense of vision and confidence to any team. I highly recommend him as he will be an asset to any organization.</p>
+                  <p>
+                    <cite>Maria Arvizu-Rodriguez</cite>
+                  </p>
+              </blockquote>
+              <blockquote>
+                <p>LaDell is a very strong part of our Customer Service team at MINDBODY.  Not only is he a product expert for the MINDBODY software, leading over 600 software trainings in his tenure, his customer service and organizational skills are also excellent.  I highly recommend LaDell for any organization.</p>
+                  <p>
+                    <cite>Ryan Stollmeyer</cite>
+                  </p>
+              </blockquote>
+              <blockquote>
+                <p>LaDell laid the groundwork for our State Route 1 Corridor System Management Plan while an intern at Caltrans. LaDell is a hard worker, easy going and a pleasure to work with!</p>
+                  <p>
+                    <cite>Adam Fukushima, PTP</cite>
+                  </p>
+              </blockquote>
+        </div>
+      </section>
+  </body>
+</html>
