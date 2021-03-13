@@ -200,6 +200,7 @@ jobs:
             npm run build
             pm2 restart dev-me
 ```
+4. Create necessary secret files [GitHub Secrest Management](https://docs.github.com/en/actions/reference/encrypted-secrets)
 
 [How to Setup GitHub Actions to Deploy a Node.js to a Server](https://soshace.com/deploying-your-nodejs-code-to-a-server-every-time-you-push-with-github-actions/)
 
