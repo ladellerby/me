@@ -175,25 +175,25 @@ function App() {
 5. Export resume from LinkedIn and convert to JSON Resume format [JSON Resume Exporter](https://chrome.google.com/webstore/detail/json-resume-exporter/caobgmmcpklomkcckaenhjlokpmfbdec)
 
 ### Setting up CI/CD
-1. Setup Server and Deploy App Manually
+1. Create Digital Ocean Droplet Server + Deploy Node.js App w/ Node, Nginx, pm2, and Lets Encrypt [Guide](https://gitlab.com/TechSavagery/business/-/wikis/Deploy-Next.js-to-Ubuntu-20.04-Digital-Ocean-Droplet)
 2. Create a github workflow directory at the root of the project `mkdir .github/workflows`
-3. Create a file for your first workflow/action `code {name-of-action}.yaml`
+3. Create a file for your first action in `code {name-of-action}.yaml`
 ```
 on:
-  push:
-    branches: [ master ]
+  push: # The git action that will trigger this run
+    branches: [ master ] # The branch that is listening for the push
  
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # server operating system that action will run on
     steps:
       - name: Deploy dev.ladellerby.com 
-        uses: appleboy/ssh-action@v0.1.2
+        uses: appleboy/ssh-action@v0.1.2 # Publiched action used to ssh into your Digital Ocean droplet and deploy the latest changes. 
         with:
           host: ${{secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: |
+          script: | # bash script used to pull changes, build, and restart application. 
             cd ~/me/ 
             git pull 
             npm install
@@ -201,8 +201,9 @@ jobs:
             pm2 restart dev-me
 ```
 4. Create necessary secret files [GitHub Secrest Management](https://docs.github.com/en/actions/reference/encrypted-secrets)
+5. Deploy these changes to the master branch in your repo and sit back to watch the magic. 
 
-[How to Setup GitHub Actions to Deploy a Node.js to a Server](https://soshace.com/deploying-your-nodejs-code-to-a-server-every-time-you-push-with-github-actions/)
+
 
 <!-- USAGE EXAMPLES -->
 
