@@ -175,6 +175,31 @@ function App() {
 5. Export resume from LinkedIn and convert to JSON Resume format [JSON Resume Exporter](https://chrome.google.com/webstore/detail/json-resume-exporter/caobgmmcpklomkcckaenhjlokpmfbdec)
 
 ### Setting up CI/CD
+1. Setup Server and Deploy App Manually
+2. Create a github workflow directory at the root of the project `mkdir .github/workflows`
+3. Create a file for your first workflow/action `code {name-of-action}.yaml`
+```
+on:
+  push:
+    branches: [ master ]
+ 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy dev.ladellerby.com 
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{secrets.SSH_HOST}}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd ~/me/ 
+            git pull 
+            npm install
+            npm run build
+            pm2 restart dev-me
+```
 
 [How to Setup GitHub Actions to Deploy a Node.js to a Server](https://soshace.com/deploying-your-nodejs-code-to-a-server-every-time-you-push-with-github-actions/)
 
