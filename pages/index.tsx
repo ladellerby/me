@@ -8,6 +8,7 @@ const IndexPage = () => (
       <Link href="/about">
         <a>About</a>
       </Link>
+      "Started with a git push, no we here!"
     </p>
   </Layout>
 );
