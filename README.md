@@ -188,7 +188,7 @@ jobs:
     runs-on: ubuntu-latest # server operating system that action will run on
     steps:
       - name: Deploy dev.ladellerby.com 
-        uses: appleboy/ssh-action@v0.1.2 # Publiched action used to ssh into your Digital Ocean droplet and deploy the latest changes. 
+        uses: appleboy/ssh-action@v0.1.2 # Public action used to ssh into your Digital Ocean droplet and deploy the latest changes. 
         with:
           host: ${{secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USERNAME }}
@@ -241,7 +241,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [@ladellerby](https://twitter.com/ladellerby) - ladell.erby@mindbodyonline.com
+Your Name - [@ladellerby](https://twitter.com/ladellerby) - ladellerby@techsavagery.net
 
 Project Link: [https://github.com/ladellerby/me](https://github.com/ladellerby/me)
 
