@@ -1,11 +1,8 @@
-import { Box, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import Layout from "../components/layouts/Layout";
 import HomeHero from "../components/sections/HomeHero";
-import BackgroundParticles from "../components/ui/widgets/BackgroundParticles";
 
 const IndexPage = () => {
-  const bg = useColorModeValue("", "#171923");
   return (
     <div>
       <Layout title="Home | LaDell Erby">

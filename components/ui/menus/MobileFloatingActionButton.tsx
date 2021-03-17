@@ -1,6 +1,6 @@
-import { Box, useColorMode } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
-import { Fab, Action } from "react-tiny-fab";
+import { Fab } from "react-tiny-fab";
 import "react-tiny-fab/dist/styles.css";
 
 const MobileFloatingActionButton = () => {
