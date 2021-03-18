@@ -168,11 +168,117 @@ function App() {
 
 ### Installing JSON Resume
 
-1. Install JSONREsume `npm install -g resume-cli`
+1. Install JSONResume `npm install -g resume-cli`
 2. Install JSONResume theme `npm install -g jsonresume-theme-standard-resume`
 3. Initialize the resume `resume init`
 4. Validate resume creation and theme `resume serve -t standard-resume`
 5. Export resume from LinkedIn and convert to JSON Resume format [JSON Resume Exporter](https://chrome.google.com/webstore/detail/json-resume-exporter/caobgmmcpklomkcckaenhjlokpmfbdec)
+
+### Setting up WordPress GraphQL Integrtation
+1. Install the following plugins in your WP instance. 
+[WPGraphQL](https://github.com/wp-graphql/wp-graphql/releases): This enables the GraphQL server.
+[WPGraphQL for ACF (advanced custom fields)](https://github.com/wp-graphql/wp-graphql-acf): To access these custom fields via the API. Must download from the zip from github and install manually. 
+[WPGraphiQL](https://github.com/wp-graphql/wp-graphiql) - Installed w/WPGraphQL has a nice IDE to test GraphQL queries to use in Next.js
+2. Create api.ts file in /utils to setup API requests to our WordPress GraphQL server. 
+```
+const API_URL = process.env["WORDPRESS_API_URL"]!;
+
+async function fetchAPI(query: any, { variables }: any = {}) {
+  const headers = { "Content-Type": "application/json" };
+
+  const res = await fetch(API_URL, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ query, variables }),
+  });
+
+  const json = await res.json();
+  if (json.errors) {
+    console.log(json.errors);
+    console.log("error details", query, variables);
+    throw new Error("Failed to fetch API");
+  }
+  return json.data;
+}
+
+export async function getAllPosts(preview: any) {
+  const data = await fetchAPI(
+    `
+      query AllPosts {
+        posts(first: 20, where: { orderby: { field: DATE, order: DESC}}) {
+          edges {
+            node {
+              id
+              date
+              title
+              slug
+            }
+          }
+        }
+      }
+      `
+  );
+
+  return data?.posts;
+}
+
+export async function getAllPostsWithSlug() {
+  const data = await fetchAPI(
+    `
+      {
+        posts(first: 10000) {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `
+  );
+  return data?.posts;
+}
+
+export async function getPost(slug: any) {
+  const data = await fetchAPI(
+    `
+      fragment PostFields on Post {
+        title
+        excerpt
+        slug
+        date
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+      }
+      query PostBySlug($id: ID!, $idType: PostIdType!) {
+        post(id: $id, idType: $idType) {
+          ...PostFields
+          content
+        }
+      }
+    `,
+    {
+      variables: {
+        id: slug,
+        idType: "SLUG",
+      },
+    }
+  );
+
+  return data;
+}
+
+export default fetchAPI;
+```
+3. Create a pages/blog directory to hold our general blog landing page and template that is used to generate all blog post instances. 
+4. Create an index.tsx inside /blog for the blog post landing page. 
+5. Create a [slug].tsx file in pages/blog. This is the template that will generate weach individual blog page. 
+6. 
+
+
 
 ### Setting up CI/CD
 1. Create Digital Ocean Droplet Server + Deploy Node.js App w/ Node, Nginx, pm2, and Lets Encrypt [Guide](https://gitlab.com/TechSavagery/business/-/wikis/Deploy-Next.js-to-Ubuntu-20.04-Digital-Ocean-Droplet)
