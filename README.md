@@ -278,7 +278,9 @@ export default fetchAPI;
 5. Create a [slug].tsx file in pages/blog. This is the template that will generate weach individual blog page. 
 6. 
 
-
+### Setting Up Storybook
+1. Run `npx sb init` at the root of your directory. 
+2. 
 
 ### Setting up CI/CD
 1. Create Digital Ocean Droplet Server + Deploy Node.js App w/ Node, Nginx, pm2, and Lets Encrypt [Guide](https://gitlab.com/TechSavagery/business/-/wikis/Deploy-Next.js-to-Ubuntu-20.04-Digital-Ocean-Droplet)

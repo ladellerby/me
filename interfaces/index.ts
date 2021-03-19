@@ -5,6 +5,18 @@
 // import { User } from 'path/to/interfaces';
 
 export type User = {
-  id: number
-  name: string
-}
+  id: number;
+  name: string;
+};
+
+export type Blog = {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: Date;
+  featuredImage: string;
+  featuredImageAlt: string;
+  content: string;
+  tags: string[];
+  slug: string;
+};
