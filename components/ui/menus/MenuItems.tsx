@@ -16,6 +16,7 @@ const MenuItems = (props: MenuProps) => {
       mr={{ base: 0, sm: isLast ? 0 : 8 }}
       display="block"
       {...rest}
+      zIndex="99"
     >
       <Link href={to}>{children}</Link>
     </Text>

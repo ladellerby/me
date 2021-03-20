@@ -13,7 +13,7 @@ export type Blog = {
   id: string;
   title: string;
   excerpt: string;
-  date: Date;
+  date: string;
   featuredImage: string;
   featuredImageAlt: string;
   content: string;

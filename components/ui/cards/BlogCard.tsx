@@ -22,6 +22,7 @@ const BlogCard = (props: BlogCardProps) => {
   } = props.data;
   return (
     <Box
+      zIndex="99"
       as="button"
       maxW="sm"
       borderWidth="1px"
@@ -58,10 +59,13 @@ const BlogCard = (props: BlogCardProps) => {
           letterSpacing="wide"
           fontSize="xs"
           textTransform="uppercase"
-          ml="2"
           bg={bg}
+          textAlign="left"
+          mt="1"
         >
-          {date}
+          <Badge borderRadius="full" px="2" colorScheme="blackAlpha">
+            {date}
+          </Badge>
         </Box>
 
         <Box

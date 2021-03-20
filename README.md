@@ -65,6 +65,15 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#getting-started-from-scratch">Getting Started</a>
+      <ul>
+        <li><a href="#project-initialization">Project Initialization</a></li>
+        <li><a href="#steup-chakra-ui">Setup Chakra-UI</a></li>
+        <li><a href="#installing-json-resume">Installing JSON Resume</a></li>
+        <li><a href="#setting-up-wordpress-graphql-integration">Setting up WordPress GraphQL Integration</a></li>
+      </ul>
+    </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -116,7 +125,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-
+<!-- Getting Started from Scratch -->
 ## Getting Started from Scratch
 
 ### Project Initialization
@@ -174,7 +183,7 @@ function App() {
 4. Validate resume creation and theme `resume serve -t standard-resume`
 5. Export resume from LinkedIn and convert to JSON Resume format [JSON Resume Exporter](https://chrome.google.com/webstore/detail/json-resume-exporter/caobgmmcpklomkcckaenhjlokpmfbdec)
 
-### Setting up WordPress GraphQL Integrtation
+### Setting up WordPress GraphQL Integration
 1. Install the following plugins in your WP instance. 
 [WPGraphQL](https://github.com/wp-graphql/wp-graphql/releases): This enables the GraphQL server.
 [WPGraphQL for ACF (advanced custom fields)](https://github.com/wp-graphql/wp-graphql-acf): To access these custom fields via the API. Must download from the zip from github and install manually. 
@@ -274,13 +283,51 @@ export async function getPost(slug: any) {
 export default fetchAPI;
 ```
 3. Create a pages/blog directory to hold our general blog landing page and template that is used to generate all blog post instances. 
-4. Create an index.tsx inside /blog for the blog post landing page. 
-5. Create a [slug].tsx file in pages/blog. This is the template that will generate weach individual blog page. 
-6. 
+4. Create a [BlogCard.tsx](https://github.com/ladellerby/me/blob/master/components/ui/cards/BlogCard.tsx) component to display the important blog details at a glance at on /blog page.
+5. Create a [BlogCardGrid.tsx](https://github.com/ladellerby/me/blob/master/components/ui/grids/BlogGrid.tsx) component to display all BlogCard components in a responsive format. 
+6. Create an index.tsx inside `pages/blog/` for the blog post landing page
+7. Add BlogGrid component to [`pages/blog/index.tsx`](https://github.com/ladellerby/me/blob/master/pages/blog/index.tsx)
+8. Create a [slug].tsx file in pages/blog. This is the template that will generate weach individual blog page. 
+9. Adjust the GetAllPosts GraphQL query to match your needs using the GraphiQL IDE and update it in utils/api.ts 
+```
+query AllPosts {
+  posts(first: 20, where: {orderby: {field: DATE, order: DESC}}) {
+    edges {
+      node {
+        id
+        date
+        title
+        slug
+        excerpt
+        tags(last: 10) {
+          edges {
+            node {
+              name
+              slug
+            }
+          }
+        }
+        featuredImage {
+          node {
+            mediaItemUrl
+            altText
+          }
+        }
+      }
+    }
+  }
+}
+```
+[![GrapiQL IDE Example](https://api.ladellerby.com/wp-content/uploads/2021/03/GraphiQLIDE-Display.png)](https://github.com/wp-graphql/wp-graphiql)
+10. Map the API response to your interface type and populate teh props for the BlogPage componment using getStaticProps() method. 
+
 
 ### Setting Up Storybook
 1. Run `npx sb init` at the root of your directory. 
-2. 
+2. Create a `Main.stories.tsx` file in stories directory. 
+3. Add a component to the file so that it shows up in the storybook ui
+4. Run `npm run storybook` to start the interactive UI
+5. Add more features [Storybook Add On Setup](https://storybook.js.org/docs/react/configure/storybook-addons)
 
 ### Setting up CI/CD
 1. Create Digital Ocean Droplet Server + Deploy Node.js App w/ Node, Nginx, pm2, and Lets Encrypt [Guide](https://gitlab.com/TechSavagery/business/-/wikis/Deploy-Next.js-to-Ubuntu-20.04-Digital-Ocean-Droplet)
