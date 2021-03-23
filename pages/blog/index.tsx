@@ -25,7 +25,7 @@ const BlogPage = (props: BlogPageProps) => {
           p="4"
           align="center"
           minH="70vh"
-          //m="2.5px"
+          m="0"
         >
           <BlogGrid blogs={posts} />
         </Flex>

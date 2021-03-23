@@ -50,9 +50,9 @@ export default function Header() {
         >
           <ThemeSelector />
           <MenuItems to="/">Home</MenuItems>
-          <MenuItems to="/">About </MenuItems>
-          <MenuItems to="/">Blog </MenuItems>
-          <MenuItems to="/">Resume </MenuItems>
+          <MenuItems to="/about">About </MenuItems>
+          <MenuItems to="/blog">Blog </MenuItems>
+          <MenuItems to="/resume.pdf">Resume </MenuItems>
           <MenuItems to="/api/resume">API</MenuItems>
           <MenuItems to="/" isLast>
             <Button

@@ -8,12 +8,12 @@ const Footer = () => {
   return (
     <Stack
       align="center"
-      background={bg}
       position="relative"
       bottom="0"
       left="0"
       right="0"
       p="25px"
+      bg={bg}
     >
       <SocialIcons />
     </Stack>

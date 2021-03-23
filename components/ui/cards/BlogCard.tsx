@@ -11,6 +11,7 @@ const BlogCard = (props: BlogCardProps) => {
   const router = useRouter();
   const bg = useColorModeValue("white", "gray.900");
   const color = useColorModeValue("gray.900", "white");
+  const colorScheme = useColorModeValue("blackAlpha", "gray");
   const {
     title,
     excerpt,
@@ -63,7 +64,7 @@ const BlogCard = (props: BlogCardProps) => {
           textAlign="left"
           mt="1"
         >
-          <Badge borderRadius="full" px="2" colorScheme="blackAlpha">
+          <Badge borderRadius="full" px="2" colorScheme={colorScheme}>
             {date}
           </Badge>
         </Box>
