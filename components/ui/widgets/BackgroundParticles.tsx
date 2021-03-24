@@ -16,11 +16,20 @@ function BackgroundParticles() {
     >
       <Particles
         options={{
-          fpsLimit: 60,
+          fpsLimit: 90,
           particles: {
+            density: {
+              max: 35,
+            },
             color: {
               value: color,
             },
+            life: {
+              delay: {
+                value: 10,
+              },
+            },
+
             links: {
               enable: true,
               color: color,

@@ -1,4 +1,5 @@
 import { Box, Button, Flex, useColorModeValue } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import React from "react";
 import Logo from "../ui/logos/Logo";
 import MenuItems from "../ui/menus/MenuItems";
@@ -6,6 +7,7 @@ import MobileMenu from "../ui/menus/MobileMenu";
 import ThemeSelector from "../ui/widgets/ThemeSelector";
 
 export default function Header() {
+  const router = useRouter();
   const [show] = React.useState(false);
   const bg = useColorModeValue("white", "gray.900");
   const color = useColorModeValue("gray.900", "white");
@@ -21,13 +23,19 @@ export default function Header() {
       justify="space-between"
       wrap="wrap"
       w="100%"
-      mb={0}
       p={6}
       bg={bg}
       color={color}
       borderTop={borderTopColor}
     >
-      <Flex align="center">
+      <Flex
+        onClick={() => {
+          router.push("/");
+        }}
+        as="button"
+        align="center"
+        zIndex={99}
+      >
         <Logo
           w="200px"
           color={["white", "white", "primary.500", "primary.500"]}

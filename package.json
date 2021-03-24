@@ -24,7 +24,8 @@
     "react-icons": "^4.2.0",
     "react-spotify-player": "^1.0.4",
     "react-tiny-fab": "^4.0.2",
-    "react-tsparticles": "^1.21.0"
+    "react-tsparticles": "^1.21.0",
+    "use-clipboard-copy": "^0.1.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.1.21",

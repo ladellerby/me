@@ -2,14 +2,33 @@ import { Box, Button, HStack, useToast } from "@chakra-ui/react";
 import React, { useState } from "react";
 import RequestForm from "./RequestForm";
 import ResponseForm from "./ResponseForm";
+import { useClipboard } from "use-clipboard-copy";
 
 const ApiClient = () => {
   const [msg, setMsg] = useState({ message: "", isError: false });
   const [isSubmitting, setSubmitting] = useState(false);
   const toast = useToast();
   const [responseBody, setResponseBody] = useState({});
-  const [responseStatus, setResponseStatus] = useState(0);
-  const [responseTime, setResponseTime] = useState(0);
+  const [responseStatus, setResponseStatus] = useState(200);
+  const [responseTime, setResponseTime] = useState(200);
+  const clipboard = useClipboard({
+    onSuccess() {
+      toast({
+        title: "Copied",
+        status: "success",
+        duration: 1000,
+        isClosable: true,
+      });
+    },
+    onError() {
+      toast({
+        title: "Copy Failed",
+        status: "error",
+        duration: 1000,
+        isClosable: true,
+      });
+    },
+  });
 
   const sendApiRequest = async (e: any) => {
     e.preventDefault();
@@ -54,17 +73,13 @@ const ApiClient = () => {
     setSubmitting(false);
   };
 
+  const copyApiRequest = async () => {
+    clipboard.copy(`${responseBody}`);
+  };
+
   return (
-    <Box width="container.xl">
-      <HStack>
-        <RequestForm onSubmit={sendApiRequest} />
-        <ResponseForm
-          responseBody={responseBody}
-          responseTime={responseTime}
-          responseStatus={responseStatus}
-        />
-      </HStack>
-      <HStack p="5" justifyContent="flex-end" spacing="15px">
+    <Box zIndex="99" width="1400px">
+      <HStack justifyContent="flex-end" spacing="5px">
         {msg.message
           ? toast({
               title: "Sent",
@@ -76,7 +91,6 @@ const ApiClient = () => {
           : null}
         <Button
           colorScheme="gray"
-          mr={3}
           form="apiRequest"
           isLoading={isSubmitting}
           loadingText="Please wait.."
@@ -84,6 +98,23 @@ const ApiClient = () => {
         >
           Send
         </Button>
+        <Button
+          colorScheme="gray"
+          isLoading={isSubmitting}
+          loadingText="Please wait.."
+          type="button"
+          onClick={copyApiRequest}
+        >
+          Copy
+        </Button>
+      </HStack>
+      <HStack>
+        <RequestForm onSubmit={sendApiRequest} />
+        <ResponseForm
+          responseBody={responseBody}
+          responseTime={responseTime}
+          responseStatus={responseStatus}
+        />
       </HStack>
     </Box>
   );
