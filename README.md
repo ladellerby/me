@@ -125,7 +125,8 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-<!-- Getting Started from Scratch -->
+   <!-- Getting Started from Scratch -->
+
 ## Getting Started from Scratch
 
 ### Project Initialization
@@ -184,11 +185,13 @@ function App() {
 5. Export resume from LinkedIn and convert to JSON Resume format [JSON Resume Exporter](https://chrome.google.com/webstore/detail/json-resume-exporter/caobgmmcpklomkcckaenhjlokpmfbdec)
 
 ### Setting up WordPress GraphQL Integration
-1. Install the following plugins in your WP instance. 
-[WPGraphQL](https://github.com/wp-graphql/wp-graphql/releases): This enables the GraphQL server.
-[WPGraphQL for ACF (advanced custom fields)](https://github.com/wp-graphql/wp-graphql-acf): To access these custom fields via the API. Must download from the zip from github and install manually. 
-[WPGraphiQL](https://github.com/wp-graphql/wp-graphiql) - Installed w/WPGraphQL has a nice IDE to test GraphQL queries to use in Next.js
-2. Create api.ts file in /utils to setup API requests to our WordPress GraphQL server. 
+
+1. Install the following plugins in your WP instance.
+   [WPGraphQL](https://github.com/wp-graphql/wp-graphql/releases): This enables the GraphQL server.
+   [WPGraphQL for ACF (advanced custom fields)](https://github.com/wp-graphql/wp-graphql-acf): To access these custom fields via the API. Must download from the zip from github and install manually.
+   [WPGraphiQL](https://github.com/wp-graphql/wp-graphiql) - Installed w/WPGraphQL has a nice IDE to test GraphQL queries to use in Next.js
+2. Create api.ts file in /utils to setup API requests to our WordPress GraphQL server.
+
 ```
 const API_URL = process.env["WORDPRESS_API_URL"]!;
 
@@ -282,13 +285,15 @@ export async function getPost(slug: any) {
 
 export default fetchAPI;
 ```
-3. Create a pages/blog directory to hold our general blog landing page and template that is used to generate all blog post instances. 
+
+3. Create a pages/blog directory to hold our general blog landing page and template that is used to generate all blog post instances.
 4. Create a [BlogCard.tsx](https://github.com/ladellerby/me/blob/master/components/ui/cards/BlogCard.tsx) component to display the important blog details at a glance at on /blog page.
-5. Create a [BlogCardGrid.tsx](https://github.com/ladellerby/me/blob/master/components/ui/grids/BlogGrid.tsx) component to display all BlogCard components in a responsive format. 
+5. Create a [BlogCardGrid.tsx](https://github.com/ladellerby/me/blob/master/components/ui/grids/BlogGrid.tsx) component to display all BlogCard components in a responsive format.
 6. Create an index.tsx inside `pages/blog/` for the blog post landing page
 7. Add BlogGrid component to [`pages/blog/index.tsx`](https://github.com/ladellerby/me/blob/master/pages/blog/index.tsx)
-8. Create a [slug].tsx file in pages/blog. This is the template that will generate weach individual blog page. 
-9. Adjust the GetAllPosts GraphQL query to match your needs using the GraphiQL IDE and update it in utils/api.ts 
+8. Create a [slug].tsx file in pages/blog. This is the template that will generate weach individual blog page.
+9. Adjust the GetAllPosts GraphQL query to match your needs using the GraphiQL IDE and update it in utils/api.ts
+
 ```
 query AllPosts {
   posts(first: 20, where: {orderby: {field: DATE, order: DESC}}) {
@@ -318,47 +323,86 @@ query AllPosts {
   }
 }
 ```
-[![GrapiQL IDE Example](https://api.ladellerby.com/wp-content/uploads/2021/03/GraphiQLIDE-Display.png)](https://github.com/wp-graphql/wp-graphiql)
-10. Map the API response to your interface type and populate teh props for the BlogPage componment using getStaticProps() method. 
 
+[![GrapiQL IDE Example](https://api.ladellerby.com/wp-content/uploads/2021/03/GraphiQLIDE-Display.png)](https://github.com/wp-graphql/wp-graphiql)
+
+10. Map the API response to your interface type and populate teh props for the BlogPage componment using getStaticProps() method.
 
 ### Setting Up Storybook
-1. Run `npx sb init` at the root of your directory. 
-2. Create a `Main.stories.tsx` file in stories directory. 
+
+1. Run `npx sb init` at the root of your directory.
+2. Create a `Main.stories.tsx` file in stories directory.
 3. Add a component to the file so that it shows up in the storybook ui
 4. Run `npm run storybook` to start the interactive UI
 5. Add more features [Storybook Add On Setup](https://storybook.js.org/docs/react/configure/storybook-addons)
 
 ### Setting up CI/CD
+
 1. Create Digital Ocean Droplet Server + Deploy Node.js App w/ Node, Nginx, pm2, and Lets Encrypt [Guide](https://gitlab.com/TechSavagery/business/-/wikis/Deploy-Next.js-to-Ubuntu-20.04-Digital-Ocean-Droplet)
 2. Create a github workflow directory at the root of the project `mkdir .github/workflows`
 3. Create a file for your first action in `code {name-of-action}.yaml`
+
 ```
 on:
   push: # The git action that will trigger this run
     branches: [ master ] # The branch that is listening for the push
- 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest # server operating system that action will run on
     steps:
-      - name: Deploy dev.ladellerby.com 
-        uses: appleboy/ssh-action@v0.1.2 # Public action used to ssh into your Digital Ocean droplet and deploy the latest changes. 
+      - name: Deploy dev.ladellerby.com
+        uses: appleboy/ssh-action@v0.1.2 # Public action used to ssh into your Digital Ocean droplet and deploy the latest changes.
         with:
           host: ${{secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: | # bash script used to pull changes, build, and restart application. 
-            cd ~/me/ 
-            git pull 
+          script: | # bash script used to pull changes, build, and restart application.
+            cd ~/me/
+            git pull
             npm install
             npm run build
             pm2 restart dev-me
 ```
+
 4. Create necessary secret files [GitHub Secrest Management](https://docs.github.com/en/actions/reference/encrypted-secrets)
-5. Deploy these changes to the master branch in your repo and sit back to watch the magic. 
+5. Deploy these changes to the master branch in your repo and sit back to watch the magic.
 
+### Sound Board Component
 
+```
+import { useColorModeValue, HTMLChakraProps, chakra } from "@chakra-ui/react";
+import { motion, HTMLMotionProps } from "framer-motion";
+
+import React from "react";
+
+type Merge<P, T> = Omit<P, keyof T> & T;
+type MotionButtonProps = Merge<HTMLChakraProps<"div">, HTMLMotionProps<"div">>;
+const MotionButton: React.FC<MotionButtonProps> = motion(chakra.div);
+
+const SoundPad = () => {
+  const bg = useColorModeValue("white", "gray.900");
+  const color = useColorModeValue("gray.900", "white");
+  return (
+    <MotionButton
+      zIndex={99}
+      borderWidth="1px"
+      borderColor={color}
+      height={["325px", "325px", "325px", "325px"]}
+      width={["325px", "325px", "325px", "325px"]}
+      bg={bg}
+      borderRadius="12px"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{
+        scale: [0.5, 1, 1, 0.5, 0.5],
+      }}
+    ></MotionButton>
+  );
+};
+
+export default SoundPad;
+
+```
 
 <!-- USAGE EXAMPLES -->
 
