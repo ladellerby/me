@@ -17,6 +17,7 @@ const ExperienceCard = () => {
       borderColor={color}
       height={["325px", "325px", "325px", "325px"]}
       width={["325px", "325px", "325px", "325px"]}
+      borderRadius="12px"
       bg={bg}
       whileHover={{ scale: 1.2 }}
       whileTap={{
