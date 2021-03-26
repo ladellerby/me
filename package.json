@@ -20,6 +20,7 @@
     "fsevents": "^2.3.2",
     "next": "latest",
     "react": "^17.0.1",
+    "react-card-flip": "^1.1.0",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
     "react-spotify-player": "^1.0.4",

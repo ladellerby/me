@@ -19,9 +19,9 @@ const SummaryCard = () => {
       width={["325px", "325px", "325px", "325px"]}
       bg={bg}
       borderRadius="12px"
-      whileHover={{ scale: 1.2 }}
+      whileHover={{ scale: 1.1 }}
       whileTap={{
-        scale: [1, 2, 2, 1, 1],
+        scale: [0.5, 1, 1, 0.5, 0.5],
       }}
     ></MotionCard>
   );
