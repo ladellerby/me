@@ -1,12 +1,12 @@
 on:
   push:
-    branches: [ master ]
- 
+    branches: [master]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy dev.ladellerby.com 
+      - name: Deploy dev.ladellerby.com
         uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{secrets.SSH_HOST}}
@@ -14,6 +14,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             cd ~/me/ 
+            git checkout
             git pull 
             npm install
             npm run build
