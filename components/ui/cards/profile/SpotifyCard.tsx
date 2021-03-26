@@ -5,7 +5,6 @@ import {
   Icon,
   Flex,
   Text,
-  HStack,
   Link,
   VStack,
 } from "@chakra-ui/react";
@@ -58,11 +57,9 @@ const SpotifyCardFront = (props: any) => {
     </>
   );
 };
-const SpotifyCardBack = (props: any) => {
+const SpotifyCardBack = () => {
   const bg = useColorModeValue("white", "gray.900");
-  const color = useColorModeValue("gray.900", "white");
 
-  const { flipCard } = props;
   const size = {
     width: "325px",
     height: "325px",
@@ -115,11 +112,7 @@ const SpotifyCard = () => {
             setFlipped(!flipped);
           }}
         />
-        <SpotifyCardBack
-          flipCard={() => {
-            setFlipped(!flipped);
-          }}
-        />
+        <SpotifyCardBack />
       </ReactCardFlip>
     </>
   );
