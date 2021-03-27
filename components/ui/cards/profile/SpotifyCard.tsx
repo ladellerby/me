@@ -7,6 +7,10 @@ import {
   Text,
   Link,
   VStack,
+  Spacer,
+  Center,
+  Box,
+  ScaleFade,
 } from "@chakra-ui/react";
 import { motion, HTMLMotionProps } from "framer-motion";
 import SpotifyPlayer from "react-spotify-player";
@@ -19,6 +23,7 @@ import ReactCardFlip from "react-card-flip";
 type Merge<P, T> = Omit<P, keyof T> & T;
 type MotionCardProps = Merge<HTMLChakraProps<"div">, HTMLMotionProps<"div">>;
 const MotionCard: React.FC<MotionCardProps> = motion(chakra.div);
+
 const SpotifyCardFront = (props: any) => {
   const bg = useColorModeValue("white", "gray.900");
   const color = useColorModeValue("gray.900", "white");
@@ -36,12 +41,21 @@ const SpotifyCardFront = (props: any) => {
         transition={{ duration: 0.75 }}
       >
         <Flex h="100%" w="100%" alignitems="center" justifyContent="center">
+          <Spacer />
           <VStack h="100%" w="100%" alignitems="center" justifyContent="center">
-            <Icon boxSize="10em" color={color} bg={bg} as={FaSpotify} />
-            <Text color={color} bg={bg} fontSize="2xl">
-              #CurrentlyInRotation
-            </Text>
-            <Flex pr="8px" pt="9px" alignSelf="flex-end">
+            <Box pt="40px" pl="20px" maxW="32rem">
+              <ScaleFade initialScale={0.2} in={true}>
+                <Center>
+                  <Icon boxSize="10em" color={color} bg={bg} as={FaSpotify} />
+                </Center>
+                <Text color={color} bg={bg} fontSize="2xl">
+                  #CurrentlyInRotation
+                </Text>
+              </ScaleFade>
+            </Box>
+
+            <Spacer />
+            <Flex pr="20px" pb="18px" alignSelf="flex-end">
               <Link onClick={flipCard} color={color} bg={bg}>
                 <Icon
                   as={FiArrowRightCircle}

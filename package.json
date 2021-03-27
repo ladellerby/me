@@ -27,6 +27,7 @@
     "react-spotify-web-playback": "^0.8.1",
     "react-tiny-fab": "^4.0.2",
     "react-tsparticles": "^1.21.0",
+    "recharts": "^2.0.9",
     "use-clipboard-copy": "^0.1.2"
   },
   "devDependencies": {

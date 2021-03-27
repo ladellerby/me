@@ -7,7 +7,7 @@
     "email": "ladellerby@gmail.com",
     "phone": "(209) 914-3898",
     "url": "https://ladellerby.com",
-    "summary": "For the last 10+ years I have explored various technical positions at a SaaS company from the Customer Service and Product Development departments. In my current role as a Software Quality Assurance Engineer, I am responsible for testing, calibrating, troubleshooting and debugging a range of software products from various tech stacks. Across these responsibilities I have surveyed, tested, advocated for, supported, and created various third-party and in house testing and CI/CD pipeline tools (i.e. automated testing frameworks, code coverage analysis etc.) to bring visibility to product quality throughout the organization.",
+    "summary": "For the last 10+ years I have explored various technical positions in the SaaS industry from the Customer Service and Product Development departments. In my current role as a Software Quality Assurance Engineer, I am responsible for testing, calibrating, troubleshooting and debugging a range of software products from various tech stacks. Across these responsibilities I have surveyed, tested, advocated for, supported, and created various third-party and in house testing and CI/CD pipeline tools (i.e. automated testing frameworks, code coverage analysis etc.) to bring visibility to product quality throughout the organization. I enjoy improving my skills accross the stack and adding to the potential value I can provide to solve difficult challenges.",
     "location": {
       "countryCode": "US",
       "address": "San Luis Obispo, California"
@@ -32,29 +32,29 @@
   },
   "work": [
     {
-      "name": "Epic Entertainment DJ Lighting and Photo Booth",
+      "name": "MINDBODY, Inc.",
+      "position": "QA Engineer",
+      "startDate": "2018-01-31",
+      "highlights": [],
+      "summary": "As a Software Quality Assurance Engineer, I am responsible for testing, calibrating, troubleshooting and debugging a range of software products from various tech stacks. Across these responsibilities I have surveyed, tested, advocated for, supported, and created various third-party and in house testing and CI/CD pipeline tools (i.e. automated testing frameworks, code coverage analysis etc.) to bring visibility to product quality throughout the organization.",
+      "url": "https://www.linkedin.com/company/42640"
+    },
+    {
+      "name": "Epic Entertainment",
       "position": "DJ & MC",
       "startDate": "2017-02-28",
       "highlights": [],
-      "summary": "",
+      "summary": "As a Mobile DJ, I take care of many key responsibilities that allow events to flow seamlessly and create a memorable experience for all involved. This includes an extensive amount of planning of the event prior via consulation with the client and other service industry professionals as well as day of tasks. I am experienced in setting up, operating, and monitoring a variety of amplified sound systems and configurations to fit client needs. I also have extensive MC experience and the ability to guide the night via my voice and other audio cues.  ",
       "url": "https://www.linkedin.com/company/7298649"
     },
     {
-      "name": "Epic Entertainment DJ Lighting and Photo Booth",
+      "name": "Epic Entertainment",
       "position": "Photobooth Host",
       "startDate": "2015-08-31",
       "endDate": "2017-02-28",
       "highlights": [],
       "summary": "",
       "url": "https://www.linkedin.com/company/7298649"
-    },
-    {
-      "name": "MINDBODY, Inc.",
-      "position": "QA Engineer",
-      "startDate": "2018-01-31",
-      "highlights": [],
-      "summary": "",
-      "url": "https://www.linkedin.com/company/42640"
     },
     {
       "name": "MINDBODY, Inc.",
