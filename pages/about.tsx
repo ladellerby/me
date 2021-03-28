@@ -1,4 +1,4 @@
-import { Flex, useColorModeValue } from "@chakra-ui/react";
+import { Center, Flex, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import Layout from "../components/layouts/Layout";
 import ProfileGrid from "../components/ui/grids/ProfileGrid";
@@ -9,18 +9,20 @@ const AboutPage = () => {
   return (
     <div>
       <Layout title="About | LaDell Erby">
-        <Flex
-          direction={["column", "column", "row", "column"]}
-          bg={bg}
-          boxShadow="md"
-          rounded="none"
-          p="4"
-          align="center"
-          minH="70vh"
-          m="0"
-        >
-          <ProfileGrid />
-        </Flex>
+        <Center bg={bg}>
+          <Flex
+            direction={["column", "column", "row", "column"]}
+            bg={bg}
+            boxShadow="md"
+            rounded="none"
+            p="4"
+            align="center"
+            minH="70vh"
+            m="0"
+          >
+            <ProfileGrid />
+          </Flex>
+        </Center>
       </Layout>
       <style global jsx>{`
         html,

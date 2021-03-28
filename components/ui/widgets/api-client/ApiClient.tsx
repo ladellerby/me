@@ -7,6 +7,8 @@ import { useClipboard } from "use-clipboard-copy";
 const ApiClient = () => {
   const [msg, setMsg] = useState({ message: "", isError: false });
   const [isSubmitting, setSubmitting] = useState(false);
+  const [isCopying, setCopying] = useState(false);
+
   const toast = useToast();
   const [responseBody, setResponseBody] = useState({});
   const [responseStatus, setResponseStatus] = useState(200);
@@ -74,7 +76,9 @@ const ApiClient = () => {
   };
 
   const copyApiRequest = async () => {
+    setCopying(true);
     clipboard.copy(`${responseBody}`);
+    setCopying(false);
   };
 
   return (
@@ -100,9 +104,9 @@ const ApiClient = () => {
         </Button>
         <Button
           colorScheme="gray"
-          isLoading={isSubmitting}
           loadingText="Please wait.."
           type="button"
+          isLoading={isCopying}
           onClick={copyApiRequest}
         >
           Copy

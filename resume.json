@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/resume",
   "basics": {
     "name": "LaDell Erby",
     "label": "QA Engineer at MINDBODY, Inc.",
@@ -185,9 +184,33 @@
       "reference": "LaDell laid the groundwork for our State Route 1 Corridor System Management Plan while an intern at Caltrans. LaDell is a hard worker, easy going and a pleasure to work with!"
     }
   ],
-  "projects": [],
-  "meta": {
-    "version": "v0.1.3",
-    "canonical": "https://github.com/jsonresume/resume-schema/blob/v0.1.3/schema.json"
-  }
+  "projects": [
+    {
+      "name": "LaDell Erby Portfolio",
+      "description": "Next.js app built to house my portfolio. This app will return Contact Info, Resume Widgets, Downloadable Resume, and.... EasterEggs!",
+      "highlights":[
+        "test"
+      ],
+      "keywords":[
+        "test"
+      ],
+      "startDate": "2020-01-01",
+      "url": "https://github.com/ladellerby/me",
+      "website": "https://ladellerby.com"
+
+    },
+    {
+      "name": "Hour Rangers Dashboard",
+      "description": "Team dashboard and widgets for the Hour Rangers engineering team. Testing React features while having just a LITTLE bit of fun lol.",
+      "highlights":[
+        "test"
+      ],
+      "keywords":[
+        "test"
+      ],
+      "startDate": "2020-01-01",
+      "url": "https://github.com/ladellerby/hour-rangers",
+      "website": "https://hour-rangers.xyz"
+    }
+  ]
 }

@@ -101,7 +101,7 @@ const ExperienceCardBack = (props: any) => {
       >
         <ModalOverlay />
         <ModalContent color={color} bg={bg}>
-          <ModalHeader>Experiences</ModalHeader>
+          <ModalHeader>Experience</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <VStack
@@ -171,7 +171,7 @@ const ExperienceCardBack = (props: any) => {
             <Box px="16px" maxW="32rem">
               <ScaleFade initialScale={0.2} in={true}>
                 <Heading fontSize="46px" color={color} bg={bg} mb={4}>
-                  Experiences
+                  Experience
                 </Heading>
 
                 {resume.work.slice(0, 1).map((workItem) => {

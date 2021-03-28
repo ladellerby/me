@@ -4,13 +4,13 @@ import {
   chakra,
   Icon,
   Flex,
-  Text,
   Link,
   VStack,
   Spacer,
   Center,
   Box,
   ScaleFade,
+  Heading,
 } from "@chakra-ui/react";
 import { motion, HTMLMotionProps } from "framer-motion";
 import SpotifyPlayer from "react-spotify-player";
@@ -31,6 +31,7 @@ const SpotifyCardFront = (props: any) => {
   return (
     <>
       <MotionCard
+        zIndex={99}
         borderWidth="1px"
         borderColor={color}
         height={["325px", "325px", "325px", "325px"]}
@@ -41,21 +42,22 @@ const SpotifyCardFront = (props: any) => {
         transition={{ duration: 0.75 }}
       >
         <Flex h="100%" w="100%" alignitems="center" justifyContent="center">
-          <Spacer />
           <VStack h="100%" w="100%" alignitems="center" justifyContent="center">
-            <Box pt="40px" pl="20px" maxW="32rem">
+            <Spacer />
+            <Box>
               <ScaleFade initialScale={0.2} in={true}>
                 <Center>
                   <Icon boxSize="10em" color={color} bg={bg} as={FaSpotify} />
                 </Center>
-                <Text color={color} bg={bg} fontSize="2xl">
-                  #CurrentlyInRotation
-                </Text>
+                <Center>
+                  <Heading textAlign="center" color={color} bg={bg} mb={4}>
+                    #InRotation
+                  </Heading>
+                </Center>
               </ScaleFade>
             </Box>
-
             <Spacer />
-            <Flex pr="20px" pb="18px" alignSelf="flex-end">
+            <Flex pb="18px" pr="20px" alignSelf="flex-end">
               <Link onClick={flipCard} color={color} bg={bg}>
                 <Icon
                   as={FiArrowRightCircle}
