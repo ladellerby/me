@@ -17,7 +17,7 @@ const ProfileGrid = () => {
         "repeat(2, 1fr)",
         "repeat(3, 1fr)",
       ]}
-      gap={6}
+      gap={8}
       bg={bg}
       alignItems="center"
     >

@@ -1,8 +1,10 @@
-import { Box, Button, HStack, useToast } from "@chakra-ui/react";
+import { Box, Button, HStack, Icon, useToast, VStack } from "@chakra-ui/react";
 import React, { useState } from "react";
 import RequestForm from "./RequestForm";
 import ResponseForm from "./ResponseForm";
 import { useClipboard } from "use-clipboard-copy";
+import router from "next/router";
+import { FaGitSquare } from "react-icons/fa";
 
 const ApiClient = () => {
   const [msg, setMsg] = useState({ message: "", isError: false });
@@ -82,45 +84,115 @@ const ApiClient = () => {
   };
 
   return (
-    <Box zIndex="99" width="1400px">
-      <HStack justifyContent="flex-end" spacing="5px">
-        {msg.message
-          ? toast({
-              title: "Sent",
-              //description: msg.message,
-              status: msg.isError ? "warning" : "success",
-              duration: 1500,
-              isClosable: true,
-            })
-          : null}
-        <Button
-          colorScheme="gray"
-          form="apiRequest"
-          isLoading={isSubmitting}
-          loadingText="Please wait.."
-          type="submit"
-        >
-          Send
-        </Button>
-        <Button
-          colorScheme="gray"
-          loadingText="Please wait.."
-          type="button"
-          isLoading={isCopying}
-          onClick={copyApiRequest}
-        >
-          Copy
-        </Button>
-      </HStack>
-      <HStack>
-        <RequestForm onSubmit={sendApiRequest} />
-        <ResponseForm
-          responseBody={responseBody}
-          responseTime={responseTime}
-          responseStatus={responseStatus}
-        />
-      </HStack>
-    </Box>
+    <>
+      <Box
+        display={["none", "none", "block", "block"]}
+        zIndex="99"
+        width="1400px"
+      >
+        <HStack justifyContent="flex-end" spacing="5px">
+          {msg.message
+            ? toast({
+                title: "Sent",
+                //description: msg.message,
+                status: msg.isError ? "warning" : "success",
+                duration: 1500,
+                isClosable: true,
+              })
+            : null}
+          <Button
+            colorScheme="gray"
+            form="apiRequest"
+            isLoading={isSubmitting}
+            loadingText="Please wait.."
+            type="submit"
+            variant="outline"
+          >
+            Send
+          </Button>
+          <Button
+            colorScheme="gray"
+            loadingText="Please wait.."
+            type="button"
+            isLoading={isCopying}
+            onClick={copyApiRequest}
+            variant="outline"
+          >
+            Copy
+          </Button>
+          <Button
+            rightIcon={<Icon as={FaGitSquare} />}
+            colorScheme="gray"
+            variant="outline"
+            onClick={() => {
+              router.push(
+                "https://github.com/ladellerby/me/tree/master/components/ui/widgets/api-client"
+              );
+            }}
+          >
+            Github
+          </Button>
+        </HStack>
+        <HStack>
+          <RequestForm onSubmit={sendApiRequest} />
+          <ResponseForm
+            responseBody={responseBody}
+            responseTime={responseTime}
+            responseStatus={responseStatus}
+          />
+        </HStack>
+      </Box>
+
+      <Box
+        display={["block", "block", "none", "none"]}
+        zIndex="99"
+        minW="375px"
+        width="auto"
+      >
+        <HStack justifyContent="flex-end" spacing="5px">
+          <Button
+            colorScheme="gray"
+            form="apiRequest"
+            loadingText="Please wait.."
+            type="submit"
+            variant="outline"
+            isLoading={isSubmitting}
+          >
+            Send
+          </Button>
+          <Button
+            colorScheme="gray"
+            loadingText="Please wait.."
+            type="button"
+            isLoading={isCopying}
+            onClick={copyApiRequest}
+            variant="outline"
+          >
+            Copy
+          </Button>
+          <Button
+            rightIcon={<Icon as={FaGitSquare} />}
+            colorScheme="gray"
+            variant="outline"
+            onClick={() => {
+              router.push(
+                "https://github.com/ladellerby/me/tree/master/components/ui/widgets/api-client"
+              );
+            }}
+          >
+            Github
+          </Button>
+        </HStack>
+        <VStack>
+          <RequestForm onSubmit={sendApiRequest} />
+          <ResponseForm
+            responseBody={responseBody}
+            responseTime={responseTime}
+            responseStatus={responseStatus}
+          />
+        </VStack>
+      </Box>
+    </>
   );
 };
 

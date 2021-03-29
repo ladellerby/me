@@ -44,8 +44,8 @@ const SummaryCardFront = (props: any) => {
       zIndex={99}
       borderWidth="1px"
       borderColor={color}
-      height={["325px", "325px", "325px", "325px"]}
-      width={["325px", "325px", "325px", "325px"]}
+      height={["350px", "350px", "350px", "350px"]}
+      width={["350px", "350px", "350px", "350px"]}
       bg={bg}
       borderRadius="12px"
       animate={{ scale: [1.2, 0.9, 1] }}
@@ -129,8 +129,8 @@ const SummaryCardBack = (props: any) => {
         zIndex={99}
         borderWidth="1px"
         borderColor={color}
-        height={["325px", "325px", "325px", "325px"]}
-        width={["325px", "325px", "325px", "325px"]}
+        height={["350px", "350px", "350px", "350px"]}
+        width={["350px", "350px", "350px", "350px"]}
         bg={bg}
         borderRadius="12px"
       >

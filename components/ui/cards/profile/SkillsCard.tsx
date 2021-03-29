@@ -97,12 +97,12 @@ const SkillCardFront = (props: any) => {
       zIndex={99}
       borderWidth="1px"
       borderColor={color}
-      height={["325px", "325px", "325px", "325px"]}
-      width={["325px", "325px", "325px", "325px"]}
+      height={["350px", "350px", "350px", "350px"]}
+      width={["350px", "350px", "350px", "350px"]}
       bg={bg}
       borderRadius="12px"
       animate={{ scale: [1.2, 0.9, 1] }}
-      transition={{ duration: 0.75 }}
+      transition={{ duration: 0.8 }}
     >
       <Flex h="100%" w="100%" alignitems="center" justifyContent="center">
         <VStack h="100%" w="100%" alignitems="center" justifyContent="center">
@@ -174,8 +174,8 @@ const SkillCardBack = (props: any) => {
         zIndex={99}
         borderWidth="1px"
         borderColor={color}
-        height={["325px", "325px", "325px", "325px"]}
-        width={["325px", "325px", "325px", "325px"]}
+        height={["350px", "350px", "350px", "350px"]}
+        width={["350px", "350px", "350px", "350px"]}
         bg={bg}
         borderRadius="12px"
       >

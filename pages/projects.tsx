@@ -1,15 +1,16 @@
 import React from "react";
 import { Flex, useColorModeValue } from "@chakra-ui/react";
 import Layout from "../components/layouts/Layout";
-import ApiClient from "../components/ui/widgets/api-client/ApiClient";
+import ProjectsGrid from "../components/ui/grids/ProjectsGrid";
 
-const HttpClientPage = () => {
+const ProjectsPage = () => {
   const bg = useColorModeValue("white", "#171923");
 
   return (
     <div>
-      <Layout title="Http Client | LaDell Erby">
+      <Layout title="Projects | LaDell Erby">
         <Flex
+          w={["100%", "100%", "100%", "100%"]}
           direction={["column", "column", "row", "column"]}
           bg={bg}
           boxShadow="md"
@@ -19,7 +20,7 @@ const HttpClientPage = () => {
           minH="70vh"
           m="0"
         >
-          <ApiClient />
+          <ProjectsGrid data={null} />
         </Flex>
       </Layout>
       <style global jsx>{`
@@ -44,4 +45,4 @@ const HttpClientPage = () => {
   );
 };
 
-export default HttpClientPage;
+export default ProjectsPage;

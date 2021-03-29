@@ -1,3 +1,4 @@
+import { InfoOutlineIcon } from "@chakra-ui/icons";
 import {
   Badge,
   Box,
@@ -22,6 +23,8 @@ type ResponseFormProps = {
 const ResponseForm = (props: ResponseFormProps) => {
   const { responseBody, responseTime, responseStatus } = props;
   const color = useColorModeValue("gray.900", "white");
+  const bg = useColorModeValue("white", "gray.800");
+
   const badges = useColorModeValue("blackAlpha", "whiteAlpha");
 
   return (
@@ -29,11 +32,23 @@ const ResponseForm = (props: ResponseFormProps) => {
       <Stack spacing="10px">
         <HStack>
           <FormControl alignItems="revert" id="status-textarea">
-            <FormLabel>
-              <Badge variant="outline" colorScheme={badges}>
-                Status
-              </Badge>
-            </FormLabel>
+            <Tooltip
+              label="HTTP response status codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes: Informational responses (100–199), Successful responses (200–299),
+          Redirects (300–399), Client errors (400–499), and Server errors (500–599)"
+              placement="top-start"
+              openDelay={500}
+              color={color}
+              bg={bg}
+            >
+              <FormLabel>
+                <HStack>
+                  <Badge variant="outline" colorScheme={badges}>
+                    Status
+                  </Badge>
+                  <InfoOutlineIcon />
+                </HStack>
+              </FormLabel>
+            </Tooltip>
             <InputGroup>
               <InputRightElement
                 width="100px"
@@ -61,14 +76,19 @@ const ResponseForm = (props: ResponseFormProps) => {
         </HStack>
         <FormControl id="responseHeaders">
           <Tooltip
-            label="HTTP Headers are an important part of the API request and response as they represent the meta-data associated with the API request and response. ... Headers carry information for: Request and Response Body. Request Authorization."
+            color={color}
+            bg={bg}
+            label="Response headers, like Age, Location or Server are used to give a more detailed context of the response."
             placement="top-start"
             openDelay={500}
           >
             <FormLabel>
-              <Badge variant="outline" colorScheme={badges}>
-                Response Headers
-              </Badge>
+              <HStack>
+                <Badge variant="outline" colorScheme={badges}>
+                  Response Headers
+                </Badge>
+                <InfoOutlineIcon />
+              </HStack>
             </FormLabel>
           </Tooltip>
           <InputGroup>
@@ -82,14 +102,19 @@ const ResponseForm = (props: ResponseFormProps) => {
         </FormControl>
         <FormControl id="responseBody">
           <Tooltip
-            label="HTTP Headers are an important part of the API request and response as they represent the meta-data associated with the API request and response. ... Headers carry information for: Request and Response Body. Request Authorization."
+            color={color}
+            bg={bg}
+            label="Response Body contains the resource data that was requested by the client."
             placement="top-start"
             openDelay={500}
           >
             <FormLabel>
-              <Badge variant="outline" colorScheme={badges}>
-                Response Body
-              </Badge>
+              <HStack>
+                <Badge variant="outline" colorScheme={badges}>
+                  Response Body
+                </Badge>
+                <InfoOutlineIcon />
+              </HStack>
             </FormLabel>
           </Tooltip>
           <InputGroup>

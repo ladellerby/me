@@ -18,6 +18,7 @@
     "@emotion/styled": "^11.1.5",
     "framer-motion": "^3.10.3",
     "fsevents": "^2.3.2",
+    "jsonresume-theme-paper": "^0.5.0",
     "next": "latest",
     "react": "^17.0.1",
     "react-awesome-slider": "^4.1.0",
@@ -29,7 +30,8 @@
     "react-tiny-fab": "^4.0.2",
     "react-tsparticles": "^1.21.0",
     "recharts": "^2.0.9",
-    "use-clipboard-copy": "^0.1.2"
+    "use-clipboard-copy": "^0.1.2",
+    "use-sound": "^2.0.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.1.21",

@@ -30,14 +30,14 @@ export default function HomeHero(props: HomeHeroProps) {
       direction={{ base: "column-reverse", md: "row" }}
       wrap="nowrap"
       minH="70vh"
-      px={12}
+      px={["0", "12px", "12px", 12]}
       mb={0}
       background={bg}
     >
       <Stack
         spacing={4}
         w={{ base: "80%", md: "40%" }}
-        align={["center", "center", "flex-start", "flex-start"]}
+        align={["flex-start", "flex-start", "flex-start", "flex-start"]}
       >
         -
         <Heading
@@ -45,7 +45,7 @@ export default function HomeHero(props: HomeHeroProps) {
           size="2xl"
           fontWeight="bold"
           color={color}
-          textAlign={["center", "center", "left", "left"]}
+          textAlign={["left", "left", "left", "left"]}
         >
           {title}
         </Heading>
@@ -56,16 +56,17 @@ export default function HomeHero(props: HomeHeroProps) {
           opacity="0.8"
           fontWeight="normal"
           lineHeight={1.5}
-          textAlign={["center", "center", "left", "left"]}
+          textAlign={["left", "left", "left", "left"]}
         >
           {subtitle}
         </Heading>
         <HStack>
           <Link href={ctaLink1}>
             <Button
+              w="auto"
               borderRadius="8px"
-              py="4"
-              px="14"
+              py={["4", "4", "4", "4"]}
+              px={["10", "14", "14", "14"]}
               lineHeight="1"
               size="lg"
               colorScheme="blakcAlpha"
@@ -76,9 +77,10 @@ export default function HomeHero(props: HomeHeroProps) {
           </Link>
           <Link href={ctaLink2}>
             <Button
+              w="auto"
               borderRadius="8px"
               py="4"
-              px="16"
+              px={["14", "12", "12", "16"]}
               lineHeight="1"
               size="lg"
               colorScheme="blakcAlpha"

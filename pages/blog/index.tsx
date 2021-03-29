@@ -54,68 +54,26 @@ const BlogPage = (props: BlogPageProps) => {
 
 export async function getStaticProps() {
   const posts: Blog[] = [];
+  const tags: string[] = [];
   const AllPostsResponse = await getAllPosts(false);
 
-  console.log(JSON.stringify(AllPostsResponse, null, 2));
-  await AllPostsResponse.edges.map((_node: any) => {
-    posts.push(
-      {
-        excerpt: `Welcome to WordPress. This is your first post. Edit 
-      or delete it, then start writing!`,
-        date: "2021-03-15T08:18:23",
-        content: `"<p>Welcome to WordPress. This is your first post. Edit 
-      or delete it, then start writing!</p>\n"`,
-        id: "cG9zdDox",
-        title: "Hello World",
-        tags: ["test", "blog", "tags"],
-        featuredImage:
-          "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-        featuredImageAlt: "landscape sunset photograph",
-        slug: "hello-world",
-      },
-      {
-        excerpt: `Welcome to WordPress. This is your first post. Edit 
-      or delete it, then start writing!`,
-        date: "2021-03-15T08:18:23",
-        content: `"<p>Welcome to WordPress. This is your first post. Edit 
-      or delete it, then start writing!</p>\n"`,
-        id: "cG9zdDox",
-        title: "Hello World",
-        tags: ["test", "blog", "tags"],
-        featuredImage:
-          "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-        featuredImageAlt: "landscape sunset photograph",
-        slug: "hello-world",
-      },
-      {
-        excerpt: `Welcome to WordPress. This is your first post. Edit 
-      or delete it, then start writing!`,
-        date: "2021-03-15T08:18:23",
-        content: `"<p>Welcome to WordPress. This is your first post. Edit 
-      or delete it, then start writing!</p>\n"`,
-        id: "cG9zdDox",
-        title: "Hello World",
-        tags: ["test", "blog", "tags"],
-        featuredImage:
-          "https://images.unsplash.com/photo-1504164996022-09080787b6b3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-        featuredImageAlt: "landscape sunset photograph",
-        slug: "hello-world",
-      },
-      {
-        excerpt: `Welcome to WordPress. This is your first post. Edit 
-      or delete it, then start writing!`,
-        date: "2021-03-15T08:18:23",
-        content: `"<p>Welcome to WordPress. This is your first post. Edit 
-      or delete it, then start writing!</p>\n"`,
-        id: "cG9zdDox",
-        title: "Hello World",
-        tags: ["test", "blog", "tags"],
-        featuredImage:
-          "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-        featuredImageAlt: "landscape sunset photograph",
-        slug: "hello-world",
-      }
-    );
+  //console.log(JSON.stringify(AllPostsResponse, null, 2));
+  await AllPostsResponse.map((post: any) => {
+    post.node.tags.edges.map((tag: any) => {
+      tags.push(tag.node.name);
+    });
+
+    posts.push({
+      excerpt: post?.node.excerpt.replace(/(<([^>]+)>)/gi, ""),
+      date: post?.node.date,
+      content: post?.node.content,
+      id: post?.node.id,
+      title: post?.node.title,
+      tags: tags,
+      featuredImage: post?.node.featuredImage.node.mediaItemUrl,
+      featuredImageAlt: post?.node.featuredImage.node.altText,
+      slug: post?.node.slug,
+    });
   });
 
   return {

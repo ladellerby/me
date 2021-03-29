@@ -192,11 +192,7 @@
         "test"
       ],
       "keywords":[
-        "React",
-        "Next.js",
-        "Chakra Ui",
-        "TypeScript",
-        "JSON Resume"
+        "test"
       ],
       "startDate": "2020-01-01",
       "url": "https://github.com/ladellerby/me",
@@ -211,17 +207,12 @@
         "test"
       ],
       "keywords":[
-        "React",
-        "Next.js",
-        "Chakra Ui",
-        "TypeScript",
-        "useHooks"
+        "test"
       ],
       "startDate": "2020-01-01",
       "url": "https://github.com/ladellerby/hour-rangers",
       "website": "https://hour-rangers.xyz",
       "image" : "https://api.ladellerby.com/wp-content/uploads/2021/03/hour-rangers-dashboard-site.png"
-
     }
   ]
 }

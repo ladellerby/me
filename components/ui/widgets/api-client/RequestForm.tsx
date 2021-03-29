@@ -1,3 +1,4 @@
+import { InfoOutlineIcon } from "@chakra-ui/icons";
 import {
   Badge,
   Box,
@@ -22,6 +23,7 @@ type RequestFormProps = {
 const RequestForm = (props: RequestFormProps) => {
   const { onSubmit } = props;
   const color = useColorModeValue("gray.900", "white");
+  const bg = useColorModeValue("white", "gray.800");
   const badges = useColorModeValue("blackAlpha", "whiteAlpha");
 
   return (
@@ -30,11 +32,22 @@ const RequestForm = (props: RequestFormProps) => {
         <Stack spacing="10px">
           <HStack>
             <FormControl>
-              <FormLabel>
-                <Badge variant="outline" colorScheme={badges}>
-                  Endpoint
-                </Badge>
-              </FormLabel>
+              <Tooltip
+                label="An API endpoint is basically a fancy word for a URL of a server or service you wish to Create, Retrieve, Update, or Delete data from."
+                placement="top-start"
+                openDelay={500}
+                color={color}
+                bg={bg}
+              >
+                <FormLabel>
+                  <HStack>
+                    <Badge variant="outline" colorScheme={badges}>
+                      Endpoint
+                    </Badge>
+                    <InfoOutlineIcon />
+                  </HStack>
+                </FormLabel>
+              </Tooltip>
               <InputGroup>
                 <InputLeftElement
                   width="100px"
@@ -63,12 +76,16 @@ const RequestForm = (props: RequestFormProps) => {
               label="HTTP Headers are an important part of the API request and response as they represent the meta-data associated with the API request and response. ... Headers carry information for: Request and Response Body. Request Authorization."
               placement="top-start"
               openDelay={500}
+              color={color}
+              bg={bg}
             >
               <FormLabel>
-                {" "}
-                <Badge variant="outline" colorScheme={badges}>
-                  Request Headers
-                </Badge>
+                <HStack>
+                  <Badge variant="outline" colorScheme={badges}>
+                    Request Headers
+                  </Badge>
+                  <InfoOutlineIcon />
+                </HStack>
               </FormLabel>
             </Tooltip>
             <InputGroup>
@@ -82,14 +99,19 @@ const RequestForm = (props: RequestFormProps) => {
           </FormControl>
           <FormControl>
             <Tooltip
-              label="HTTP Headers are an important part of the API request and response as they represent the meta-data associated with the API request and response. ... Headers carry information for: Request and Response Body. Request Authorization."
+              color={color}
+              bg={bg}
+              label="A request body is data sent by the client to the API."
               placement="top-start"
               openDelay={500}
             >
               <FormLabel>
-                <Badge variant="outline" colorScheme={badges}>
-                  Request Body
-                </Badge>
+                <HStack>
+                  <Badge variant="outline" colorScheme={badges}>
+                    Request Body
+                  </Badge>
+                  <InfoOutlineIcon />
+                </HStack>
               </FormLabel>
             </Tooltip>
             <InputGroup>

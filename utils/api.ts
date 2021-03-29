@@ -30,6 +30,7 @@ export async function getAllPosts(_preview: any) {
             title
             slug
             excerpt
+            content(format: RENDERED)
             tags(last: 10) {
               edges {
                 node {
@@ -51,8 +52,7 @@ export async function getAllPosts(_preview: any) {
     
       `
   );
-
-  return data?.posts;
+  return data?.posts.edges;
 }
 
 export async function getAllPostsWithSlug() {
@@ -75,23 +75,32 @@ export async function getAllPostsWithSlug() {
 export async function getPost(slug: any) {
   const data = await fetchAPI(
     `
-      fragment PostFields on Post {
-        title
-        excerpt
-        slug
-        date
-        featuredImage {
+    fragment PostFields on Post {
+      title
+      excerpt
+      slug
+      date
+      featuredImage {
+        node {
+          mediaItemUrl
+          altText
+        }
+      }
+      content(format: RENDERED)
+      tags(last: 10) {
+        edges {
           node {
-            sourceUrl
+            name
+            slug
           }
         }
       }
-      query PostBySlug($id: ID!, $idType: PostIdType!) {
-        post(id: $id, idType: $idType) {
-          ...PostFields
-          content
-        }
+    }
+    query PostBySlug($id: ID!, $idType: PostIdType!) {
+      post(id: $id, idType: $idType) {
+        ...PostFields
       }
+    }
     `,
     {
       variables: {
