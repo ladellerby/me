@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Image } from "@chakra-ui/react";
+import { Flex, Grid } from "@chakra-ui/react";
 import React from "react";
 import SoundPad from "./SoundPad";
 
@@ -17,18 +17,14 @@ function Soundboard(props: SoundBoardProps) {
       align="center"
       m="2.5px"
     >
-      <Box>
-        <Image src="/images/logo-black.png"></Image>
-      </Box>
-
       <Grid
         templateColumns={[
-          "repeat(2, 1fr)",
-          "repeat(2, 1fr)",
-          "repeat(4, 1fr)",
-          "repeat(4, 1fr)",
+          "repeat(1, 1fr)",
+          "repeat(1, 1fr)",
+          "repeat(3, 1fr)",
+          "repeat(3, 1fr)",
         ]}
-        gap={2}
+        gap={6}
       >
         {props.buttons.map((button: any) => (
           <SoundPad
