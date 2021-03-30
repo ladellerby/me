@@ -49,7 +49,7 @@ const ResponseForm = (props: ResponseFormProps) => {
                 </HStack>
               </FormLabel>
             </Tooltip>
-            <InputGroup>
+            <InputGroup color={color} bg={bg}>
               <InputRightElement
                 width="100px"
                 paddingRight="20px"
@@ -70,8 +70,6 @@ const ResponseForm = (props: ResponseFormProps) => {
                 isDisabled={true}
                 defaultValue=""
                 textAlign="right"
-                color={color}
-                bg={bg}
               />
             </InputGroup>
           </FormControl>
@@ -93,13 +91,11 @@ const ResponseForm = (props: ResponseFormProps) => {
               </HStack>
             </FormLabel>
           </Tooltip>
-          <InputGroup>
+          <InputGroup color={color} bg={bg}>
             <Textarea
               disabled={true}
               name="content"
               id="responseHeaders-textarea"
-              color={color}
-              bg={bg}
             />
           </InputGroup>
         </FormControl>

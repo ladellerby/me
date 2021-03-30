@@ -16,6 +16,7 @@
     "@chakra-ui/theme-tools": "^1.1.0",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
+    "focus-visible": "^5.2.0",
     "framer-motion": "^3.10.3",
     "fsevents": "^2.3.2",
     "jsonresume-theme-paper": "^0.5.0",
