@@ -42,10 +42,10 @@ const ResponseForm = (props: ResponseFormProps) => {
             >
               <FormLabel>
                 <HStack>
-                  <Badge variant="outline" colorScheme={badges}>
+                  <Badge variant="outline" bg={bg} colorScheme={badges}>
                     Status
                   </Badge>
-                  <InfoOutlineIcon />
+                  <InfoOutlineIcon color={color} bg={bg} />
                 </HStack>
               </FormLabel>
             </Tooltip>
@@ -84,10 +84,10 @@ const ResponseForm = (props: ResponseFormProps) => {
           >
             <FormLabel>
               <HStack>
-                <Badge variant="outline" colorScheme={badges}>
+                <Badge variant="outline" bg={bg} colorScheme={badges}>
                   Response Headers
                 </Badge>
-                <InfoOutlineIcon />
+                <InfoOutlineIcon color={color} bg={bg} />
               </HStack>
             </FormLabel>
           </Tooltip>
@@ -109,10 +109,10 @@ const ResponseForm = (props: ResponseFormProps) => {
           >
             <FormLabel>
               <HStack>
-                <Badge variant="outline" colorScheme={badges}>
+                <Badge variant="outline" bg={bg} colorScheme={badges}>
                   Response Body
                 </Badge>
-                <InfoOutlineIcon />
+                <InfoOutlineIcon color={color} bg={bg} />
               </HStack>
             </FormLabel>
           </Tooltip>

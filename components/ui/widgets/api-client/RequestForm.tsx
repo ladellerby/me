@@ -41,10 +41,10 @@ const RequestForm = (props: RequestFormProps) => {
               >
                 <FormLabel>
                   <HStack>
-                    <Badge variant="outline" colorScheme={badges}>
+                    <Badge variant="outline" bg={bg} colorScheme={badges}>
                       Endpoint
                     </Badge>
-                    <InfoOutlineIcon />
+                    <InfoOutlineIcon color={color} bg={bg} />
                   </HStack>
                 </FormLabel>
               </Tooltip>
@@ -83,10 +83,10 @@ const RequestForm = (props: RequestFormProps) => {
             >
               <FormLabel>
                 <HStack>
-                  <Badge variant="outline" colorScheme={badges}>
+                  <Badge variant="outline" bg={bg} colorScheme={badges}>
                     Request Headers
                   </Badge>
-                  <InfoOutlineIcon />
+                  <InfoOutlineIcon color={color} bg={bg} />
                 </HStack>
               </FormLabel>
             </Tooltip>
@@ -110,10 +110,10 @@ const RequestForm = (props: RequestFormProps) => {
             >
               <FormLabel>
                 <HStack>
-                  <Badge variant="outline" colorScheme={badges}>
+                  <Badge variant="outline" bg={bg} colorScheme={badges}>
                     Request Body
                   </Badge>
-                  <InfoOutlineIcon />
+                  <InfoOutlineIcon color={color} bg={bg} />
                 </HStack>
               </FormLabel>
             </Tooltip>
