@@ -1,4 +1,12 @@
-import { Box, Button, HStack, Icon, useToast, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  HStack,
+  Icon,
+  useColorModeValue,
+  useToast,
+  VStack,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import RequestForm from "./RequestForm";
 import ResponseForm from "./ResponseForm";
@@ -10,6 +18,8 @@ const ApiClient = () => {
   const [msg, setMsg] = useState({ message: "", isError: false });
   const [isSubmitting, setSubmitting] = useState(false);
   const [isCopying, setCopying] = useState(false);
+  const color = useColorModeValue("gray.900", "white");
+  const bg = useColorModeValue("white", "gray.900");
 
   const toast = useToast();
   const [responseBody, setResponseBody] = useState({});
@@ -111,7 +121,8 @@ const ApiClient = () => {
             Send
           </Button>
           <Button
-            colorScheme="gray"
+            color={color}
+            bg={bg}
             loadingText="Please wait.."
             type="button"
             isLoading={isCopying}
@@ -122,6 +133,8 @@ const ApiClient = () => {
           </Button>
           <Button
             rightIcon={<Icon as={FaGitSquare} />}
+            color={color}
+            bg={bg}
             colorScheme="gray"
             variant="outline"
             onClick={() => {
@@ -157,6 +170,8 @@ const ApiClient = () => {
             type="submit"
             variant="outline"
             isLoading={isSubmitting}
+            color={color}
+            bg={bg}
           >
             Send
           </Button>
@@ -167,11 +182,15 @@ const ApiClient = () => {
             isLoading={isCopying}
             onClick={copyApiRequest}
             variant="outline"
+            color={color}
+            bg={bg}
           >
             Copy
           </Button>
           <Button
             rightIcon={<Icon as={FaGitSquare} />}
+            color={color}
+            bg={bg}
             colorScheme="gray"
             variant="outline"
             onClick={() => {

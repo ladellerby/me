@@ -23,7 +23,7 @@ type RequestFormProps = {
 const RequestForm = (props: RequestFormProps) => {
   const { onSubmit } = props;
   const color = useColorModeValue("gray.900", "white");
-  const bg = useColorModeValue("white", "gray.800");
+  const bg = useColorModeValue("white", "gray.900");
   const badges = useColorModeValue("blackAlpha", "whiteAlpha");
 
   return (
@@ -67,6 +67,8 @@ const RequestForm = (props: RequestFormProps) => {
                   type="text"
                   id="endpoint"
                   defaultValue="https://api.github.com/users/ladellerby/repos"
+                  color={color}
+                  bg={bg}
                 />
               </InputGroup>
             </FormControl>
@@ -94,6 +96,7 @@ const RequestForm = (props: RequestFormProps) => {
                 name="content"
                 id="requestHeaders"
                 color={color}
+                bg={bg}
               />
             </InputGroup>
           </FormControl>
@@ -121,6 +124,7 @@ const RequestForm = (props: RequestFormProps) => {
                 name="content"
                 id="requestbody"
                 color={color}
+                bg={bg}
               />
             </InputGroup>
           </FormControl>

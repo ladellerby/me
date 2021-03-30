@@ -23,7 +23,7 @@ type ResponseFormProps = {
 const ResponseForm = (props: ResponseFormProps) => {
   const { responseBody, responseTime, responseStatus } = props;
   const color = useColorModeValue("gray.900", "white");
-  const bg = useColorModeValue("white", "gray.800");
+  const bg = useColorModeValue("white", "gray.900");
 
   const badges = useColorModeValue("blackAlpha", "whiteAlpha");
 
@@ -70,6 +70,8 @@ const ResponseForm = (props: ResponseFormProps) => {
                 isDisabled={true}
                 defaultValue=""
                 textAlign="right"
+                color={color}
+                bg={bg}
               />
             </InputGroup>
           </FormControl>
@@ -97,6 +99,7 @@ const ResponseForm = (props: ResponseFormProps) => {
               name="content"
               id="responseHeaders-textarea"
               color={color}
+              bg={bg}
             />
           </InputGroup>
         </FormControl>
@@ -124,6 +127,7 @@ const ResponseForm = (props: ResponseFormProps) => {
               name="content"
               id="responseBody-textarea"
               color={color}
+              bg={bg}
               value={responseBody}
               defaultValue=""
             />
