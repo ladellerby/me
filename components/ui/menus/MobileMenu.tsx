@@ -31,10 +31,10 @@ const RightMenu = () => {
         isOpen={isOpen}
         placement="right"
         onClose={onClose}
-        motionPreset={"slideInRight"}
+        motionPreset={"slideInBottom"}
         size="xs"
       >
-        <DrawerOverlay bg={bg} color={color}>
+        <DrawerOverlay color={color}>
           <DrawerContent bg={bg} color={color}>
             <DrawerCloseButton bg={bg} color={color} />
             <DrawerHeader></DrawerHeader>

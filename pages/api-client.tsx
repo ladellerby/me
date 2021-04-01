@@ -12,7 +12,6 @@ const ApiClientPage = () => {
         <Flex
           direction={["column", "column", "row", "column"]}
           bg={bg}
-          boxShadow="md"
           rounded="none"
           p="4"
           align="center"

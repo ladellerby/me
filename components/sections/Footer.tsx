@@ -13,7 +13,6 @@ const Footer = () => {
       left="0"
       right="0"
       p="25px"
-      bg={bg}
     >
       <SocialIcons />
     </Stack>

@@ -7,8 +7,6 @@ type LogoProps = {
 };
 
 export default function Logo(props: LogoProps) {
-  const bg = useColorModeValue("white", "gray.900");
-  const color = useColorModeValue("primary.800", "white");
   const logo = useColorModeValue(
     "/le_logo_badge_dark.png",
     "/le_logo_badge_light.png"
@@ -17,11 +15,9 @@ export default function Logo(props: LogoProps) {
   return (
     <Box {...props}>
       <Image
-        boxSize="165px"
+        boxSize={["100px", "115px", "145px", "165px"]}
         src={logo}
         alt="LaDell Erby Logo"
-        color={color}
-        bg={bg}
       />
     </Box>
   );

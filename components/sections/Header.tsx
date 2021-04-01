@@ -42,7 +42,7 @@ export default function Header() {
         />
       </Flex>
 
-      <Box display={{ base: "block", md: "none" }}>
+      <Box display={["block", "block", "none", "none"]}>
         {!show ? <MobileMenu /> : null}
       </Box>
 

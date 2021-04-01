@@ -1,10 +1,22 @@
+import { Flex, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import Layout from "../../components/layouts/Layout";
 
 const BlogDetail = () => {
+  const bg = useColorModeValue("white", "#171923");
   return (
     <div>
-      <Layout title="Blog | {PostName}"></Layout>
+      <Layout title="Blog | {PostName}">
+        <Flex
+          direction={["column", "column", "row", "column"]}
+          rounded="none"
+          p="4"
+          align="center"
+          minH="70vh"
+          m="0"
+          bg={bg}
+        ></Flex>
+      </Layout>
       <style global jsx>{`
         html,
         body,
