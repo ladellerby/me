@@ -1,10 +1,8 @@
-import { Stack, useColorModeValue } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import React from "react";
 import SocialIcons from "../ui/widgets/SocialIcons";
 
 const Footer = () => {
-  const bg = useColorModeValue("white", "gray.900");
-
   return (
     <Stack
       align="center"
