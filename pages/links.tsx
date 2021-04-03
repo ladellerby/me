@@ -1,25 +1,23 @@
-import React from "react";
 import { Flex, useColorModeValue } from "@chakra-ui/react";
+import React from "react";
 import Layout from "../components/layouts/Layout";
-import ProjectsGrid from "../components/ui/grids/ProjectsGrid";
+import LinkGrid from "../components/ui/grids/LinkGrid";
 
-const ProjectsPage = () => {
+const Links = () => {
   const bg = useColorModeValue("white", "#171923");
-
   return (
     <div>
-      <Layout title="Projects | LaDell Erby">
+      <Layout title="Links | LaDell Erby">
         <Flex
-          w={["100%", "100%", "100%", "100%"]}
           direction={["column", "column", "row", "column"]}
-          bg={bg}
           rounded="none"
           p="4"
           align="center"
           minH="70vh"
           m="0"
+          bg={bg}
         >
-          <ProjectsGrid data={null} />
+          <LinkGrid data={null} />
         </Flex>
       </Layout>
       <style global jsx>{`
@@ -44,4 +42,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default Links;

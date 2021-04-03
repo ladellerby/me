@@ -62,6 +62,7 @@ export default function Header() {
           <MenuItems to="/blog">Blog </MenuItems>
           <MenuItems to="/resume.pdf">Resume </MenuItems>
           <MenuItems to="/projects">Projects</MenuItems>
+          <MenuItems to="/links">Links</MenuItems>
           <MenuItems to="mailto:ladellerby@gmail.com" isLast>
             <Button
               variant="outline"

@@ -37,6 +37,22 @@ const ProjectsGrid = (_props: ProjectsGridProps) => {
         description={resume.projects[1]["description"]}
         tags={resume.projects[1]["keywords"]}
       />
+      <ProjectCard
+        website="/sound-board"
+        image="https://api.ladellerby.com/wp-content/uploads/2021/04/le-react-sound-board.png"
+        url="https://github.com/ladellerby/me/tree/master/components/ui/widgets/sound-board"
+        name="react-sound-board"
+        description="Blending my passion for music and technology in a simple soundboard component using my favorite sound bytes."
+        tags={["react", "howler.js"]}
+      />
+      <ProjectCard
+        website="/api-client"
+        image="https://api.ladellerby.com/wp-content/uploads/2021/04/le-api-client.png"
+        url="https://github.com/ladellerby/me/tree/master/components/ui/widgets/api-client"
+        name="react-learn-api-client"
+        description="Everyone should be able to experience the magic of tech. This simple component walks you through the process of sending a real api request to a server."
+        tags={["react", "Fetch-Api"]}
+      />
     </Grid>
   );
 };
