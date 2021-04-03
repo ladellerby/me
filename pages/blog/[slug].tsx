@@ -1,8 +1,13 @@
 import { Flex, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import Layout from "../../components/layouts/Layout";
+import { getAllPostsWithSlug, getPost } from "../../utils/api";
 
-const BlogDetail = () => {
+type BlogDetailPageProps = {
+  post: any;
+};
+
+const BlogDetail = ({ post }: BlogDetailPageProps) => {
   const bg = useColorModeValue("white", "#171923");
   return (
     <div>
@@ -15,7 +20,11 @@ const BlogDetail = () => {
           minH="70vh"
           m="0"
           bg={bg}
-        ></Flex>
+        >
+          <article
+            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+          />
+        </Flex>
       </Layout>
       <style global jsx>{`
         html,
@@ -38,5 +47,26 @@ const BlogDetail = () => {
     </div>
   );
 };
+
+export async function getStaticPaths() {
+  const res = await getAllPostsWithSlug();
+
+  const paths = res.edges.map((post: { slug: string }) => ({
+    params: { slug: post.slug },
+  }));
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: any) {
+  const postData = getPost(params.slug);
+  return {
+    props: {
+      postData,
+    },
+  };
+}
 
 export default BlogDetail;

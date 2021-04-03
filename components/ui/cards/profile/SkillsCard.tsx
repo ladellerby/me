@@ -180,7 +180,7 @@ const SkillCardBack = (props: any) => {
         borderRadius="12px"
       >
         <VStack h="100%" w="100%" alignitems="center" justifyContent="center">
-          <Box pt="60px" onClick={onOpen}>
+          <Flex onClick={onOpen}>
             <PieChart width={175} height={175}>
               <Pie
                 data={data01}
@@ -188,7 +188,7 @@ const SkillCardBack = (props: any) => {
                 nameKey="name"
                 cx="50%"
                 cy="50%"
-                outerRadius={50}
+                outerRadius={25}
                 fill={color}
               />
               <Pie
@@ -197,13 +197,13 @@ const SkillCardBack = (props: any) => {
                 nameKey="name"
                 cx="50%"
                 cy="50%"
-                innerRadius={60}
-                outerRadius={80}
+                innerRadius={30}
+                outerRadius={40}
                 fill={color}
                 label
               />
             </PieChart>
-          </Box>
+          </Flex>
           <Spacer />
           <Flex pb="18px" pl="20px" alignSelf="flex-start">
             <Link onClick={flipCard} color={color} bg={bg}>

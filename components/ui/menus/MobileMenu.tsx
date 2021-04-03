@@ -49,24 +49,21 @@ const RightMenu = () => {
                 >
                   <ThemeSelector />
                   <MenuItems to="/">Home</MenuItems>
-                  <MenuItems to="/">About </MenuItems>
-                  <MenuItems to="/">Blog </MenuItems>
-                  <MenuItems to="/">Resume </MenuItems>
-                  <MenuItems to="/api/resume">API</MenuItems>
-                  <MenuItems to="/contact" isLast>
+                  <MenuItems to="/about">About </MenuItems>
+                  <MenuItems to="/blog">Blog </MenuItems>
+                  <MenuItems to="/resume.pdf">Resume </MenuItems>
+                  <MenuItems to="/projects">Projects</MenuItems>
+                  <MenuItems to="/links">Links</MenuItems>
+                  <MenuItems to="mailto:ladellerby@gmail.com" isLast>
                     <Button
                       variant="outline"
                       size="sm"
                       rounded="md"
-                      color={["primary.500", "primary.500", "white", "white"]}
-                      bg={["white", "white", "primary.500", "primary.500"]}
+                      color={color}
+                      bg={bg}
                       _hover={{
-                        bg: [
-                          "primary.100",
-                          "primary.100",
-                          "primary.600",
-                          "primary.600",
-                        ],
+                        bg: { bg },
+                        color: { color },
                       }}
                     >
                       Contact
