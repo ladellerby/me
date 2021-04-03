@@ -11,7 +11,6 @@ function Soundboard(props: SoundBoardProps) {
     <Flex
       w={["100%", "100%", "100%", "100%"]}
       direction="column"
-      boxShadow="md"
       rounded="lg"
       p="4"
       align="center"
@@ -21,8 +20,8 @@ function Soundboard(props: SoundBoardProps) {
         templateColumns={[
           "repeat(1, 1fr)",
           "repeat(1, 1fr)",
-          "repeat(3, 1fr)",
-          "repeat(3, 1fr)",
+          "repeat(4, 1fr)",
+          "repeat(4, 1fr)",
         ]}
         gap={6}
       >

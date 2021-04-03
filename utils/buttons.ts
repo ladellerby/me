@@ -44,4 +44,39 @@ export const ButtonList: any[] = [
     key: "1",
     sound: "breh",
   },
+  {
+    name: "Gunshot",
+    key: "1",
+    sound: "vine-boom",
+  },
+  {
+    name: "Too Short Burn Rubber",
+    key: "1",
+    sound: "sonic-boom",
+  },
+  {
+    name: "Gunshot",
+    key: "1",
+    sound: "lets-go",
+  },
+  {
+    name: "Gunshot",
+    key: "1",
+    sound: "hello_motherfrucker",
+  },
+  {
+    name: "Too Short Burn Rubber",
+    key: "1",
+    sound: "haduken",
+  },
+  {
+    name: "Gunshot",
+    key: "1",
+    sound: "finish-him",
+  },
+  {
+    name: "Gunshot",
+    key: "1",
+    sound: "e40-uhhh",
+  },
 ];
