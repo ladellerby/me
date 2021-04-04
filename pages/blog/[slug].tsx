@@ -1,5 +1,6 @@
 import { Flex, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import Layout from "../../components/layouts/Layout";
 import { getAllPostsWithSlug, getPost } from "../../utils/api";
 
@@ -21,9 +22,11 @@ const BlogDetail = ({ post }: BlogDetailPageProps) => {
           m="0"
           bg={bg}
         >
-          <article
-            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-          />
+          <article>
+            <ReactMarkdown>
+              {post.content.replace(/(<([^>]+)>)/gi, "")}
+            </ReactMarkdown>
+          </article>
         </Flex>
       </Layout>
       <style global jsx>{`
@@ -49,22 +52,20 @@ const BlogDetail = ({ post }: BlogDetailPageProps) => {
 };
 
 export async function getStaticPaths() {
-  const res = await getAllPostsWithSlug();
-
-  const paths = res.edges.map((post: { slug: string }) => ({
-    params: { slug: post.slug },
-  }));
+  const allPostsWithSlugs = await getAllPostsWithSlug();
   return {
-    paths,
+    paths:
+      allPostsWithSlugs.edges.map(({ node }: any) => `/blog/${node.slug}`) ||
+      [],
     fallback: false,
   };
 }
 
 export async function getStaticProps({ params }: any) {
-  const postData = getPost(params.slug);
+  const postData = await getPost(params.slug);
   return {
     props: {
-      postData,
+      post: postData,
     },
   };
 }

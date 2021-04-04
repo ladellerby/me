@@ -61,7 +61,7 @@ export async function getAllPostsWithSlug() {
       {
         posts(first: 10000) {
           edges {
-            params : node {
+            node {
               slug
             }
           }
@@ -69,10 +69,6 @@ export async function getAllPostsWithSlug() {
       }
     `
   );
-  console.log(JSON.stringify(data?.posts?.edges, null, 2));
-  console.log(data?.posts?.edges[0].slug);
-  console.log(data);
-
   return data?.posts;
 }
 
@@ -114,7 +110,7 @@ export async function getPost(slug: any) {
     }
   );
 
-  return data.post;
+  return data?.post;
 }
 
 export default fetchAPI;

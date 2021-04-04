@@ -53,11 +53,11 @@ const BlogPage = (props: BlogPageProps) => {
 
 export async function getStaticProps() {
   const posts: Blog[] = [];
-  const tags: string[] = [];
+
   const AllPostsResponse = await getAllPosts(false);
 
-  //console.log(JSON.stringify(AllPostsResponse, null, 2));
   await AllPostsResponse.map((post: any) => {
+    const tags: string[] = [];
     post.node.tags.edges.map((tag: any) => {
       tags.push(tag.node.name);
     });
