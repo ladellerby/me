@@ -53,7 +53,7 @@ const LinkCard = (props: LinkCardProps) => {
             <Spacer />
             <Box pl="20px" maxW="32rem">
               <ScaleFade initialScale={0.2} in={true}>
-                <Heading color={color} bg={bg} mb={4}>
+                <Heading noOfLines={3} color={color} bg={bg} mb={4}>
                   {name}
                 </Heading>
                 <Text

@@ -154,9 +154,22 @@
   "publications": [],
   "skills": [
     {
-      "name": "Skill",
-      "level": "",
-      "keywords": []
+      "name": "Automated Testing",
+      "level": "5",
+      "keywords": ["JavaScript", "C#", "Front-End", "Back-End", "api-testing", "ui-testing", "XUnit", "Selenium", "Cypress", "Jest"],
+      "description" : "I am proficient in creating, implementing, and managing automated test suites for enterprise grade web applications. I can provide full automated test frameworks from test case creation to CI/CD integration and any where in between. "
+    },
+    {
+      "name": "React",
+      "level": "2",
+      "keywords": ["Next.js", "Gatsby.js", "Chakra-Ui", "Tailwind-CSS", "Server-Side-Rendering", "Server-Side-Generation"],
+      "description" : "React is my front end library of choice. I have created full stack web applications using React with features such as Headless CMS integration, User Authentication, Session Management, and Form Submissions etc. "
+    },
+    {
+      "name": "WordPress",
+      "level": "6",
+      "keywords": ["Managed WordPress Hosting", "Theme Customization", "Wordpress Migrations", "Wordpress Redesigns", "WooCommerce", "Google Analytics + SEO", "Responsive Design"],
+      "description" : "I have end to end project experience with the WordPress platform. I can launch a project from idea/requirements to a fully functioning production ready web site. I have extensive experience with managing existing WordPress projects via theme and plugin modifications, SEO and Analytics monitoring, and Web Hosting setups. "
     }
   ],
   "languages": [

@@ -19,6 +19,12 @@ import {
   Heading,
   Spacer,
   ScaleFade,
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  HStack,
 } from "@chakra-ui/react";
 import { motion, HTMLMotionProps } from "framer-motion";
 import ReactCardFlip from "react-card-flip";
@@ -28,65 +34,9 @@ import { FiArrowRightCircle, FiArrowLeftCircle } from "react-icons/fi";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import router from "next/router";
 
-import resume from "../../../../resume.json";
-import { PieChart, Pie } from "recharts";
-
 type Merge<P, T> = Omit<P, keyof T> & T;
 type MotionCardProps = Merge<HTMLChakraProps<"div">, HTMLMotionProps<"div">>;
 const MotionCard: React.FC<MotionCardProps> = motion(chakra.div);
-
-const data01 = [
-  {
-    name: "Group A",
-    value: 400,
-  },
-  {
-    name: "Group B",
-    value: 300,
-  },
-  {
-    name: "Group C",
-    value: 300,
-  },
-  {
-    name: "Group D",
-    value: 200,
-  },
-  {
-    name: "Group E",
-    value: 278,
-  },
-  {
-    name: "Group F",
-    value: 189,
-  },
-];
-const data02 = [
-  {
-    name: "Group A",
-    value: 2400,
-  },
-  {
-    name: "Group B",
-    value: 4567,
-  },
-  {
-    name: "Group C",
-    value: 1398,
-  },
-  {
-    name: "Group D",
-    value: 9800,
-  },
-  {
-    name: "Group E",
-    value: 3908,
-  },
-  {
-    name: "Group F",
-    value: 4800,
-  },
-];
 
 const SkillCardFront = (props: any) => {
   const bg = useColorModeValue("white", "gray.900");
@@ -145,9 +95,45 @@ const SkillCardBack = (props: any) => {
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent color={color} bg={bg}>
-          <ModalHeader>Summary</ModalHeader>
+          <ModalHeader>Skills</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>{resume.basics.summary}</ModalBody>
+          <ModalBody>
+            <Accordion>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box flex="1" textAlign="left">
+                      Section 1 title
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </AccordionPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box flex="1" textAlign="left">
+                      Section 2 title
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </ModalBody>
           <ModalFooter>
             <Button
               variant="outline"
@@ -180,40 +166,32 @@ const SkillCardBack = (props: any) => {
         borderRadius="12px"
       >
         <VStack h="100%" w="100%" alignitems="center" justifyContent="center">
-          <Flex onClick={onOpen}>
-            <PieChart width={175} height={175}>
-              <Pie
-                data={data01}
-                dataKey="value"
-                nameKey="name"
-                cx="50%"
-                cy="50%"
-                outerRadius={25}
-                fill={color}
-              />
-              <Pie
-                data={data02}
-                dataKey="value"
-                nameKey="name"
-                cx="50%"
-                cy="50%"
-                innerRadius={30}
-                outerRadius={40}
-                fill={color}
-                label
-              />
-            </PieChart>
-          </Flex>
+          <Flex onClick={onOpen}></Flex>
           <Spacer />
-          <Flex pb="18px" pl="20px" alignSelf="flex-start">
-            <Link onClick={flipCard} color={color} bg={bg}>
-              <Icon
-                as={FiArrowLeftCircle}
-                boxSize="2em"
-                color={color}
-                bg={bg}
-              />
-            </Link>
+          <Flex>
+            <HStack spacing={90}>
+              <Flex pb="18px" pl="20px" alignSelf="flex-start">
+                <Link onClick={flipCard} color={color} bg={bg}>
+                  <Icon
+                    as={FiArrowLeftCircle}
+                    boxSize="2em"
+                    color={color}
+                    bg={bg}
+                  />
+                </Link>
+              </Flex>
+              <Spacer />
+              <Flex pb="18px" pr="20px" alignSelf="flex-end">
+                <Button
+                  rightIcon={<ArrowForwardIcon />}
+                  colorScheme={colorScheme}
+                  variant="outline"
+                  onClick={onOpen}
+                >
+                  More
+                </Button>
+              </Flex>
+            </HStack>
           </Flex>
         </VStack>
       </MotionCard>
