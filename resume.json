@@ -154,9 +154,16 @@
   "publications": [],
   "skills": [
     {
-      "name": "Skill",
-      "level": "",
-      "keywords": []
+      "name": "Automated Testing",
+      "level": "5",
+      "description" : "I have experience throughout every stage of the automated testing framework lifecycle. I am able to spin up new frameworks in C# and Javascript using industry standard tooling.",
+      "keywords": ["API Testing", "UI Testing", "XUnit", "Cypress.io", "Selenium", "Postman", "Jest", "React Testing Library"]
+    },
+    {
+      "name": "WordPress Development",
+      "level": "5",
+      "description" : "",
+      "keywords": ["Deployment", "Hosting", "Monitoring", "Theme Installations", "Theme Edits", "Project Consulation"]
     }
   ],
   "languages": [

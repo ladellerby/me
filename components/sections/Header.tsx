@@ -60,7 +60,7 @@ export default function Header() {
           <MenuItems to="/">Home</MenuItems>
           <MenuItems to="/about">About </MenuItems>
           <MenuItems to="/blog">Blog </MenuItems>
-          <MenuItems to="/resume.pdf">Resume </MenuItems>
+          <MenuItems to="/api/resume">Resume </MenuItems>
           <MenuItems to="/projects">Projects</MenuItems>
           <MenuItems to="/links">Links</MenuItems>
           <MenuItems to="mailto:ladellerby@gmail.com" isLast>

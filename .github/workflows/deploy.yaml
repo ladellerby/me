@@ -17,6 +17,7 @@ jobs:
             git checkout .
             git pull 
             npm install
+            export NODE_OPTIONS="--max-old-space-size=8096"
             npm run build
             pm2 restart dev-me
       - name: Deploy ladellerby.com
@@ -30,5 +31,6 @@ jobs:
             git checkout .
             git pull 
             npm install
+            export NODE_OPTIONS="--max-old-space-size=8096"
             npm run build
             pm2 restart prod-me
