@@ -39,7 +39,7 @@ const SoundPad = (props: SoundPadProps) => {
       borderRadius="12px"
       whileHover={{ scale: 1.1 }}
       whileTap={{
-        scale: [0.5, 1, 1, 0.5, 0.5],
+        scale: [1, 0.5, 1, 1, 0.5, 0.5],
       }}
     >
       <Flex>
