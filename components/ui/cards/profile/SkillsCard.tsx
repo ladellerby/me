@@ -25,7 +25,6 @@ import {
   AccordionItem,
   AccordionPanel,
   HStack,
-  Text,
 } from "@chakra-ui/react";
 import { motion, HTMLMotionProps } from "framer-motion";
 import ReactCardFlip from "react-card-flip";
@@ -35,7 +34,6 @@ import { FiArrowRightCircle, FiArrowLeftCircle } from "react-icons/fi";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import router from "next/router";
 import resume from "../../../../public/resume.json";
-import { FaGitSquare } from "react-icons/fa";
 
 type Merge<P, T> = Omit<P, keyof T> & T;
 type MotionCardProps = Merge<HTMLChakraProps<"div">, HTMLMotionProps<"div">>;
