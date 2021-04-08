@@ -20,6 +20,7 @@ import {
   Heading,
   Spacer,
   ScaleFade,
+  HStack,
 } from "@chakra-ui/react";
 import { motion, HTMLMotionProps } from "framer-motion";
 import ReactCardFlip from "react-card-flip";
@@ -142,25 +143,32 @@ const SummaryCardBack = (props: any) => {
               create value worldwide.
             </Heading>
             <Spacer />
-            <Button
-              rightIcon={<ArrowForwardIcon />}
-              colorScheme={colorScheme}
-              variant="outline"
-              onClick={onOpen}
-            >
-              More
-            </Button>
           </Box>
           <Spacer />
-          <Flex pb="18px" pl="20px" alignSelf="flex-start">
-            <Link onClick={flipCard} color={color} bg={bg}>
-              <Icon
-                as={FiArrowLeftCircle}
-                boxSize="2em"
-                color={color}
-                bg={bg}
-              />
-            </Link>
+          <Flex>
+            <HStack spacing={90}>
+              <Flex pb="18px" pl="20px" alignSelf="flex-start">
+                <Link onClick={flipCard} color={color} bg={bg}>
+                  <Icon
+                    as={FiArrowLeftCircle}
+                    boxSize="2em"
+                    color={color}
+                    bg={bg}
+                  />
+                </Link>
+              </Flex>
+              <Spacer />
+              <Flex pb="18px" pr="20px" alignSelf="flex-end">
+                <Button
+                  rightIcon={<ArrowForwardIcon />}
+                  colorScheme={colorScheme}
+                  variant="outline"
+                  onClick={onOpen}
+                >
+                  More
+                </Button>
+              </Flex>
+            </HStack>
           </Flex>
         </VStack>
       </MotionCard>

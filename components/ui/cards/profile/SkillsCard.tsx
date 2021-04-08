@@ -25,6 +25,7 @@ import {
   AccordionItem,
   AccordionPanel,
   HStack,
+  Text,
 } from "@chakra-ui/react";
 import { motion, HTMLMotionProps } from "framer-motion";
 import ReactCardFlip from "react-card-flip";
@@ -33,6 +34,8 @@ import { SiCodeforces } from "react-icons/si";
 import { FiArrowRightCircle, FiArrowLeftCircle } from "react-icons/fi";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import router from "next/router";
+import resume from "../../../../public/resume.json";
+import { FaGitSquare } from "react-icons/fa";
 
 type Merge<P, T> = Omit<P, keyof T> & T;
 type MotionCardProps = Merge<HTMLChakraProps<"div">, HTMLMotionProps<"div">>;
@@ -103,16 +106,16 @@ const SkillCardBack = (props: any) => {
                 <h2>
                   <AccordionButton>
                     <Box flex="1" textAlign="left">
-                      Section 1 title
+                      Automated Testing
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  I am proficient in creating, implementing, and managing
+                  automated test suites for enterprise grade web applications. I
+                  can provide full automated test frameworks from test case
+                  creation to CI/CD integration and any where in between.
                 </AccordionPanel>
               </AccordionItem>
 
@@ -120,16 +123,34 @@ const SkillCardBack = (props: any) => {
                 <h2>
                   <AccordionButton>
                     <Box flex="1" textAlign="left">
-                      Section 2 title
+                      React
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  React is my front end library of choice. I have created full
+                  stack web applications using React with features such as
+                  Headless CMS integration, User Authentication, Session
+                  Management, and Form Submissions etc.
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box flex="1" textAlign="left">
+                      Wordpress
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  I have end to end project experience with the WordPress
+                  platform. I can launch a project from idea/requirements to a
+                  fully functioning production ready web site. I have extensive
+                  experience with managing existing WordPress projects via theme
+                  and plugin modifications, SEO and Analytics monitoring, and
+                  Web Hosting setups.
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
@@ -166,7 +187,14 @@ const SkillCardBack = (props: any) => {
         borderRadius="12px"
       >
         <VStack h="100%" w="100%" alignitems="center" justifyContent="center">
-          <Flex onClick={onOpen}></Flex>
+          <Heading fontSize="26px" color={color} bg={bg} mb={4} mt={4}>
+            Skills
+          </Heading>
+
+          {resume.skills.slice(0, 1).map((skill: any) => {
+            return <></>;
+          })}
+
           <Spacer />
           <Flex>
             <HStack spacing={90}>

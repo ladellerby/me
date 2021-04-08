@@ -26,7 +26,11 @@ export default function HomeHero(props: HomeHeroProps) {
   return (
     <Flex
       align="center"
-      justify={{ base: "center", md: "space-around", xl: "space-between" }}
+      justify={{
+        base: "space-between",
+        md: "space-around",
+        xl: "space-between",
+      }}
       direction={{ base: "column-reverse", md: "row" }}
       wrap="nowrap"
       minH="70vh"

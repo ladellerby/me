@@ -175,7 +175,23 @@ const ProjectsCardBack = (props: any) => {
                     </>
                   );
                 })}
-                <Box pt={5}>
+              </ScaleFade>
+            </Box>
+            <Spacer />
+            <Flex>
+              <HStack spacing={90}>
+                <Flex pb="18px" pl="20px" alignSelf="flex-start">
+                  <Link onClick={flipCard} color={color} bg={bg}>
+                    <Icon
+                      as={FiArrowLeftCircle}
+                      boxSize="2em"
+                      color={color}
+                      bg={bg}
+                    />
+                  </Link>
+                </Flex>
+                <Spacer />
+                <Flex pb="18px" pr="20px" alignSelf="flex-end">
                   <Button
                     rightIcon={<ArrowForwardIcon />}
                     colorScheme={colorScheme}
@@ -184,19 +200,8 @@ const ProjectsCardBack = (props: any) => {
                   >
                     More
                   </Button>
-                </Box>
-              </ScaleFade>
-            </Box>
-            <Spacer />
-            <Flex pb="18px" pl="20px" alignSelf="flex-start">
-              <Link onClick={flipCard} color={color} bg={bg}>
-                <Icon
-                  as={FiArrowLeftCircle}
-                  boxSize="2em"
-                  color={color}
-                  bg={bg}
-                />
-              </Link>
+                </Flex>
+              </HStack>
             </Flex>
           </VStack>
         </Flex>
