@@ -189,7 +189,7 @@ const SkillCardBack = (props: any) => {
             Skills
           </Heading>
 
-          {resume.skills.slice(0, 1).map((skill: any) => {
+          {resume.skills.slice(0, 1).map((_skill: any) => {
             return <></>;
           })}
 
