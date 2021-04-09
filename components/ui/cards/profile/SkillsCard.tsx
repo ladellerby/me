@@ -25,15 +25,17 @@ import {
   AccordionItem,
   AccordionPanel,
   HStack,
+  Grid,
 } from "@chakra-ui/react";
 import { motion, HTMLMotionProps } from "framer-motion";
 import ReactCardFlip from "react-card-flip";
 import React, { useState } from "react";
-import { SiCodeforces } from "react-icons/si";
+import { SiCodeforces, SiCsharp } from "react-icons/si";
 import { FiArrowRightCircle, FiArrowLeftCircle } from "react-icons/fi";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import router from "next/router";
-import resume from "../../../../public/resume.json";
+import { FaReact, FaWordpress } from "react-icons/fa";
+import { GiTestTubes } from "react-icons/gi";
 
 type Merge<P, T> = Omit<P, keyof T> & T;
 type MotionCardProps = Merge<HTMLChakraProps<"div">, HTMLMotionProps<"div">>;
@@ -185,13 +187,13 @@ const SkillCardBack = (props: any) => {
         borderRadius="12px"
       >
         <VStack h="100%" w="100%" alignitems="center" justifyContent="center">
-          <Heading fontSize="26px" color={color} bg={bg} mb={4} mt={4}>
-            Skills
-          </Heading>
-
-          {resume.skills.slice(0, 1).map((_skill: any) => {
-            return <></>;
-          })}
+          <Spacer />
+          <Grid bg={bg} templateColumns="repeat(2, 1fr)" gap={1}>
+            <Icon boxSize="5em" color={color} bg={bg} as={FaReact} />
+            <Icon boxSize="5em" color={color} bg={bg} as={FaWordpress} />
+            <Icon boxSize="5em" color={color} bg={bg} as={SiCsharp} />
+            <Icon boxSize="5em" color={color} bg={bg} as={GiTestTubes} />
+          </Grid>
 
           <Spacer />
           <Flex>
