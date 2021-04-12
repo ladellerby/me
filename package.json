@@ -21,6 +21,7 @@
     "fsevents": "^2.3.2",
     "jsonresume-theme-paper": "^0.5.0",
     "next": "latest",
+    "next-seo": "^4.23.0",
     "react": "^17.0.1",
     "react-awesome-slider": "^4.1.0",
     "react-card-flip": "^1.1.0",

@@ -4,6 +4,7 @@ import React from "react";
 import BackgroundParticles from "../components/ui/widgets/BackgroundParticles";
 import "focus-visible/dist/focus-visible";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 const colors = {
   brand: {},
@@ -13,6 +14,11 @@ const theme = extendTheme({ colors });
 function MyApp({ Component, pageProps }: any) {
   return (
     <>
+      <NextSeo
+        robotsProps={{
+          notranslate: true,
+        }}
+      />
       <Head>
         <link
           rel="apple-touch-icon"
