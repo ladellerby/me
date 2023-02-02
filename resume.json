@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "LaDell Erby",
-    "label": "QA Engineer at MINDBODY, Inc.",
+    "label": "Software Engineer at MINDBODY, Inc.",
     "image": "",
     "email": "ladellerby@gmail.com",
     "phone": "(209) 914-3898",
@@ -40,8 +40,17 @@
     },
     {
       "name": "MINDBODY, Inc.",
+      "position": "Software Engineer",
+      "startDate": "2022-01-01",
+      "highlights": [],
+      "summary": "As a Software Engineer, I am responsible for developing software solutions by studying information needs, conferring with users, studying systems flow, data usage, and work processes, investigating problem areas, following the software development lifecycle.",
+      "url": "https://www.linkedin.com/company/42640"
+    },
+    {
+      "name": "MINDBODY, Inc.",
       "position": "QA Engineer",
       "startDate": "2018-01-31",
+      "endDate": "2021-12-31",
       "highlights": [],
       "summary": "As a Software Quality Assurance Engineer, I am responsible for testing, calibrating, troubleshooting and debugging a range of software products from various tech stacks. Across these responsibilities I have surveyed, tested, advocated for, supported, and created various third-party and in house testing and CI/CD pipeline tools (i.e. automated testing frameworks, code coverage analysis etc.) to bring visibility to product quality throughout the organization.",
       "url": "https://www.linkedin.com/company/42640"
@@ -143,10 +152,7 @@
       "startDate": "2009-12-31",
       "endDate": "2009-12-31",
       "gpa": "",
-      "courses": [
-        "null - Real Estate Economics",
-        "null - Real Estate Law"
-      ]
+      "courses": ["null - Real Estate Economics", "null - Real Estate Law"]
     }
   ],
   "awards": [],
@@ -155,14 +161,31 @@
     {
       "name": "Automated Testing",
       "level": "5",
-      "description" : "I have experience throughout every stage of the automated testing framework lifecycle. I am able to spin up new frameworks in C# and Javascript using industry standard tooling.",
-      "keywords": ["API Testing", "UI Testing", "XUnit", "Cypress.io", "Selenium", "Postman", "Jest", "React Testing Library"]
+      "description": "I have experience throughout every stage of the automated testing framework lifecycle. I am able to spin up new frameworks in C# and Javascript using industry standard tooling.",
+      "keywords": [
+        "API Testing",
+        "UI Testing",
+        "XUnit",
+        "Cypress.io",
+        "Selenium",
+        "Postman",
+        "Jest",
+        "React Testing Library",
+        "Playwright"
+      ]
     },
     {
       "name": "WordPress Development",
       "level": "5",
-      "description" : "",
-      "keywords": ["Deployment", "Hosting", "Monitoring", "Theme Installations", "Theme Edits", "Project Consulation"]
+      "description": "",
+      "keywords": [
+        "Deployment",
+        "Hosting",
+        "Monitoring",
+        "Theme Installations",
+        "Theme Edits",
+        "Project Consulation"
+      ]
     }
   ],
   "languages": [
@@ -194,40 +217,29 @@
     {
       "name": "LaDell Erby Portfolio",
       "description": "Next.js app built to house my portfolio. This app will return Contact Info, Resume Widgets, Downloadable Resume, and.... EasterEggs!",
-      "highlights":[
-        "test"
-      ],
-      "keywords":[
+      "highlights": ["test"],
+      "keywords": [
         "React",
         "Next.js",
-        "Chakra Ui",
+        "Playwright",
         "TypeScript",
+        "Cypress.io",
         "JSON Resume"
       ],
       "startDate": "2020-01-01",
       "url": "https://github.com/ladellerby/me",
       "website": "https://ladellerby.com",
-      "image" : "https://api.ladellerby.com/wp-content/uploads/2021/03/ladell-erby-portfolio-site.png"
-
+      "image": "https://api.ladellerby.com/wp-content/uploads/2021/03/ladell-erby-portfolio-site.png"
     },
     {
       "name": "Hour Rangers Dashboard",
       "description": "Team dashboard and widgets for the Hour Rangers engineering team. Testing React features while having just a LITTLE bit of fun lol.",
-      "highlights":[
-        "test"
-      ],
-      "keywords":[
-        "React",
-        "Next.js",
-        "Chakra Ui",
-        "TypeScript",
-        "useHooks"
-      ],
+      "highlights": ["test"],
+      "keywords": ["React", "Next.js", "Chakra Ui", "TypeScript", "useHooks"],
       "startDate": "2020-01-01",
       "url": "https://github.com/ladellerby/hour-rangers",
       "website": "https://hour-rangers.xyz",
-      "image" : "https://api.ladellerby.com/wp-content/uploads/2021/03/hour-rangers-dashboard-site.png"
-
+      "image": "https://api.ladellerby.com/wp-content/uploads/2021/03/hour-rangers-dashboard-site.png"
     }
   ]
 }
